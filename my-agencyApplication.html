@@ -1,0 +1,96 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/commit.css"/>
+	<link rel="stylesheet" type="text/css" href="css/ht.css"/>
+	<script src="js/pixel.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left">
+		</a>
+		<h1 class="mui-title">申请代理</h1>
+	</header>
+	<div class="mui-content">
+		<ul class="mui-table-view mui_agencyApplication_contain">
+			<li class="mui-table-view-cell mui_agencyApplication_city">
+				<a class="mui-push-right " id="openSheet" href="#sheet">
+					请选择代理城市
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				代理费用
+				<span class="mui-pull-right mui_priceColor ">¥0.00</span>
+			</li>
+		</ul>
+		
+		<div class="mui_agencyApplication_submitRow">
+			<!-- 在没选代理城市之前 btn 不可用 -->
+			<button type="button" class="mui-btn mui-btn-blue mui-btn-block" disabled>提交</button>
+		</div>
+		
+		<div id="sheet" class="mui-popover mui-popover-bottom mui-popover-action mui_agencyApplication_citysheet">
+		
+			<p class="mui_sheetLabel">配送至</p>
+			<div class="mui_cityArea">
+				<!-- 请选择 省-市-区
+				 mui_itemDf_now 为请选择样式 -->
+				<span class="mui_itemDf ">广东</span>
+				<span class="mui_itemDf ">深圳市</span>
+				<span class="mui_itemDf mui_itemDf_now">请选择</span>
+			</div>
+			
+			<!-- 可选择菜单 -->
+			<ul class="mui-table-view mui_sheetList">
+			  <li >
+				<span class="mui_sheetItem_city">北京</span>
+			  </li>
+			  <li >
+				<span class="mui_sheetItem_city">广东</span>
+			  </li>
+			  <li >
+				<span class="mui_sheetItem_city">广西</span>
+			  </li>
+			  <li>
+				<span class="mui_sheetItem_city">湖南</span>
+			  </li>
+			  <li>
+				<span class="mui_sheetItem_city">湖北</span>
+			  </li>
+			  <li>
+				<span class="mui_sheetItem_city">江西</span>
+			  </li>
+			  <li >
+				<span class="mui_sheetItem_city">北京</span>
+			  </li>
+			  <li >
+				<span class="mui_sheetItem_city">广东</span>
+			  </li>
+			  <li >
+				<span class="mui_sheetItem_city">广西</span>
+			  </li>
+			  <li>
+				<span class="mui_sheetItem_city">湖南</span>
+			  </li>
+			  <li>
+				<span class="mui_sheetItem_city">湖北</span>
+			  </li>
+			  <li>
+				<span class="mui_sheetItem_city">江西</span>
+			  </li>
+			</ul>
+		</div>
+		
+	</div>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		mui.init()
+	</script>
+</body>
+</html>

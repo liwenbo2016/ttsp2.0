@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/commit.css"/>
+		<link rel="stylesheet" type="text/css" href="css/setting.css"/>
+		<script src="js/pixel.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-icon-arrowleft mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title mui-align-left">解除绑定</h1>
+		</header>
+		<div class="mui-content">
+		    <ul class="mui-table-view">
+	            <li class="mui-table-view-cell">
+	                储蓄卡（尾号2233）
+	                <a href="#popover" class="mui-pull-right" style="color: red;">
+	                	解除绑定
+	                </a>
+	            </li>
+	       </ul>
+	       
+		</div>
+		<!--支付键盘-->
+		<div id="popover" class="box mui-popover mui-popover-action mui-popover-bottom">
+			<div class="mui-key-header">
+				<div class="mui-key-title">
+					请输入支付密码
+				</div>
+				<div class="mui-key-tip">
+					<div class="" style="padding-bottom: 10px;">确定解除绑定</div>
+					<!--<div class="mui-num">确定解除绑定</div>-->
+				</div>
+				<div class="mui-key-box">
+					<div class="mui-box-item"></div>
+					<div class="mui-box-item"></div>
+					<div class="mui-box-item"></div>
+					<div class="mui-box-item"></div>
+					<div class="mui-box-item"></div>
+					<div class="mui-box-item"></div>
+				</div>
+			</div>
+			<div id="keyboard">
+				<div class="mui-row">
+					<div class="mui-key-btn num">1</div>
+					<div class="mui-key-btn num">2</div>
+					<div class="mui-key-btn num">3</div>
+				</div>
+				<div class="mui-row">
+					<div class="mui-key-btn num">4</div>
+					<div class="mui-key-btn num">5</div>
+					<div class="mui-key-btn num">6</div>
+				</div>
+				<div class="mui-row">
+					<div class="mui-key-btn num">7</div>
+					<div class="mui-key-btn num">8</div>
+					<div class="mui-key-btn num">9</div>
+				</div>
+				<div class="mui-row">
+					<div class="mui-key-btn no"></div>
+					<div class="mui-key-btn num">0</div>
+					<div class="mui-key-btn del">X</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var password = [];
+			mui.each(document.querySelectorAll('#keyboard .num'), function (i, el) {
+				el.addEventListener('tap', function () {
+					addInputed(this.innerText);
+				});
+			});
+			document.querySelector('.del').addEventListener('tap', function () {
+				removeInputed();
+			});
+			function addInputed (num) {
+				if (password.length > 5) {return;}
+				var nodeEl = document.querySelectorAll('.mui-key-box .mui-box-item')[password.length];
+				password.push(num);
+				addClass(nodeEl, 'mui-inputed');
+				if (password.length === 6) { // 密码已经输入了六位数
+					console.log(password.join(''));
+//					window.location.href = 'my-balabce-success.html';
+				}
+			}
+			function removeInputed () {
+				if (!password.length) {return;}
+				var nodeEl = document.querySelectorAll('.mui-key-box .mui-box-item')[password.length-1];
+				password.pop();
+				removeClass(nodeEl, 'mui-inputed');
+			}
+			function hasClass(elements, cName) {
+			  	return !!elements.className.match(new RegExp("(\\s|^)" + cName + "(\\s|$)")); 
+			}
+			function addClass(elements, cName) {
+			  	if(!hasClass(elements, cName)) {
+			    	elements.className += " " + cName; 
+			  	}
+			}
+			function removeClass(elements, cName) {
+			  if (hasClass(elements,cName)) { 
+			    elements.className = elements.className.replace(new RegExp( "(\\s|^)" + cName + "(\\s|$)" ), " ");
+			  }
+			}
+		</script>
+	</body>
+
+</html>

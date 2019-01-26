@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link rel="stylesheet" href="css/mui.min.css" />
+	<link rel="stylesheet" href="css/iconfont.css" />
+	<!-- <link rel="stylesheet" href="css/commit.css" /> -->
+	<link rel="stylesheet" href="css/ht.css"/>
+	<script src="js/pixel.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+		<h1 class="mui-title">客服中心</h1>
+	</header>
+	
+	<div class="mui-content">
+		<div class="mui_noticeRow">
+			<div class="mui_customerCenter_notice">
+				<img class="mui_notice_ico" src="img/ico_voice.png" alt="">
+				<div class="mui_noticeTxt_case">
+					<p class="mui_noticeTxt mui_notice_moveEffect">关于自贸区，特卖区,福利区,抽奖区的详解</p>
+				</div>
+				<i class="mui_lineDf"></i>
+				<a class="mui_notice_moreBtn" href="my-setting-customer-notice.html">更多</a>
+			</div>
+		</div>
+		
+		<div class="mui_customer_QCheck">
+			<h1 class="mui_customer_title">问题查询</h1>
+			<ul class="mui-table-view mui-grid-view mui-grid-9 mui_QCheck_grid">
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="my-setting-customer-newbieGuide.html">
+						<img class="mui_Qitem_ico" src="img/ico_2.png" alt="">
+						<div class="mui-media-body mui_Qitem_txt">新手指南</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#">
+						<img class="mui_Qitem_ico" src="img/ico_3.png" alt="">
+						<div class="mui-media-body mui_Qitem_txt">配送方式</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#">
+						<img class="mui_Qitem_ico" src="img/ico_4.png" alt="">
+						<div class="mui-media-body mui_Qitem_txt">支付方式</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#">
+						<img class="mui_Qitem_ico" src="img/ico_5.png" alt="">
+						<div class="mui-media-body mui_Qitem_txt">了解我们</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#">
+						<img class="mui_Qitem_ico" src="img/ico_6.png" alt="">
+						<div class="mui-media-body mui_Qitem_txt">售后服务</div>
+					</a>
+				</li>
+			</ul>
+			
+		</div>
+		
+		<div class="mui_customer_QCheck">
+			<h1 class="mui_customer_title">在线客服</h1>
+			<ul class="mui-table-view mui-grid-view mui-grid-9 mui_QCheck_grid">
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#">
+						<img class="mui_Qitem_ico" src="img/ico_1.png" alt="">
+						<div class="mui-media-body mui_Qitem_txt">在线客服</div>
+					</a>
+				</li>		
+			</ul>
+			
+		</div>
+	</div>
+	
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		mui.init()
+		mui.ready(function(){
+			var notice_obj = mui('.mui_noticeTxt')
+			var notice_width =  notice_obj[0].offsetWidth
+			var time = notice_width / 10
+			notice_obj[0].style.animationDuration = time + "s"
+		}) 
+	</script>
+</body>
+</html>

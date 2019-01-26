@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>警情上传</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/iconfont.css" />
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav mui-bar-change">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <a class="mui-action-back mui-pull-right mui-bar-right">上传</a>
+		    <h1 class="mui-title mui-active">
+		    	张三等人赌博案
+		    	<a href="#popovers" class="iconfont icon-sanjiaoxing"></a>
+		    	<a href="#popovers" class="iconfont icon-sanjiaoxing1 mui-icon-active"></a>
+		    	<div id="icon"></div>
+		    </h1>
+		</header>
+		<div class="mui-content">
+		    <div class="mui-input-set">
+				<div class="mui-input-row">
+				    <label>材料名称</label>
+			        <input type="text" class="mui-input-clear" placeholder="输入材料名称">
+				</div>
+			</div>
+			<div class="mui-input-set">
+				<div class="mui-input-row">
+				    <label>材料类型</label>
+			        <a href="#" class="mui-icon mui-icon-arrowright mui-pull-right mui-bott"></a>
+				</div>
+			</div>
+			<div class="mui-input-set">
+				<div class="mui-input-row">
+				    <label>相关人员</label>
+			        <a href="#" class="mui-icon mui-icon-arrowright mui-pull-right mui-bott"></a>
+				</div>
+			</div>
+			<div class="mui-input-set">
+				<div class="mui-input-row">
+				    <label>上传附件</label>
+			        <a href="#" class="mui-icon mui-icon-arrowright mui-pull-right mui-bott"></a>
+				</div>
+			</div>
+			<div class="mui-input-set">
+				<div class="mui-input-row">
+				    <label>上传文件</label>
+			        <a href="#" class="mui-icon mui-icon-arrowright mui-pull-right mui-bott"></a>
+				</div>
+			</div>
+			<div class="mui-shang-file">
+				<a href="#" class="mui-icon mui-icon-plusempty"></a>
+			</div>
+		</div>
+		
+		<!--上传详情弹窗-->
+		<div id="popovers" class="mui-popover mui-pop-mes" style="width:100%;margin-left:0.3125rem;">
+				<div class="mui-link-info">
+		    		<div class="mui-info-top">
+		    			<div class="mui-info-bgt">
+		    				<img src="img/1.jpg" alt="" />
+		    			</div>
+		    			<div class="mui-info-meg">
+		    				<span class="boy">
+		    					接警人:
+		    					<span>张晓阳</span>
+		    				</span>
+		    			    <span class="day">2018-01-26</span>
+		    			</div>
+		    		</div>
+		    		<p class="blue">A40305500000201805001</p>
+		    		<p>
+		    			<span>警情名称:</span>
+		    			<i>张三等赌博案</i>
+		    		</p>
+		    		<p>
+		    			<span>接警单位:</span>
+		    			<i>深圳市南山分局南头派出所</i>
+		    		</p>
+		    		<p>
+		    			<span>警情类型:</span>
+		    			<i style="color:#1544e9;">治安警情</i>
+		    		</p>
+		    	</div>
+				<div id="box" class="mui-popover-position"></div>
+				<div class="mui-popover-arrow"></div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			document.getElementById("icon").addEventListener("tap", function() {
+				//调用隐藏/显示弹出层
+				mui("#popovers").popover('toggle', document.getElementById("box"));
+			})
+		</script>
+	</body>
+
+</html>

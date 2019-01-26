@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>设置</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav mui-bar-change">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="my.html"></a>
+		    <h1 class="mui-title">设置</h1>
+		</header>
+		<div class="mui-content">
+		    <a href="my-phone-number.html" class="mui-info-lists">
+		    	<span class="mui-info-lists-left">手机</span>
+		    	<span class="mui-info-lists-right">
+		    		<span class="mui-info-lists-right-meas">18873836280</span>
+		    	    <span class="mui-icon mui-icon-arrowright mui-pull-right mui-butn"></span>
+		    	</span>
+		    </a>
+		   <a href="my-mailbox.html" class="mui-info-lists">
+		   	    <span class="mui-info-lists-left">邮箱</span>
+		    	<span class="mui-info-lists-right">
+		    		<span class="mui-info-lists-right-meas">41419783@qq.com</span>
+		    	    <span class="mui-icon mui-icon-arrowright mui-pull-right mui-butn"></span>
+		    	</span>
+		    </a>	
+		    <a href="my-password.html" class="mui-info-lists">
+		    	<span class="mui-info-lists-left">密码</span>
+		    	<span class="mui-info-lists-right">
+		    		<span class="mui-info-lists-right-meas">去设置</span>
+		    	    <span class="mui-icon mui-icon-arrowright mui-pull-right mui-butn"></span>
+		    	</span>
+		    </a>
+		    <a href="#popover" class="mui-info-lists" style="border:0;">
+		    	<span id="layout"></span>
+		    	<span class="mui-info-lists-left">软件更新</span>
+		    	<span class="mui-info-lists-right">
+		    		<span class="mui-info-lists-right-meas">当前版本V1.0</span>
+		    	    <span class="mui-icon mui-icon-arrowright mui-pull-right mui-butn"></span>
+		    	</span>
+		    </a>
+		    <a href="#popovers" class="mui-info-logo">
+		    	<span id="icon"></span>
+		    	退出登录
+		    </a>
+		    
+		    <!--软件更新弹窗-->
+			<div id="popover" class="mui-popover mui-pop-info" style="height:14.375rem;width:20.625rem;">
+				<span>软件更新</span>
+				<div class="mess">检测到新版本,是否更新?</div>
+				<p>
+					<a href="my-set.html" class="mui-btn mui-btn-left">取消</a>
+					<a href="login.html" class="mui-btn mui-btn-right">确定</a>
+				</p>
+				<div id="demo" class="mui-popover-position"></div>
+				<div class="mui-popover-arrow"></div>
+			</div>
+		    
+		    
+		    <!--退出登录弹窗-->
+		    <div id="popovers" class="mui-popover mui-pop-mes" style="width:100%;margin-left:0.3125rem;">
+				<div class="info">退出不删除任何历史数据,请放心退出</div>
+				<p>
+					<a href="login.html" class="mui-btn-se">退出登录</a>
+					<a href="my-set.html" class="mui-btn-lo">取消</a>
+				</p>
+				<div id="box" class="mui-popover-position"></div>
+				<div class="mui-popover-arrow"></div>
+			</div>
+		    
+		</div>
+		
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			document.getElementById("layout").addEventListener("tap", function() {
+				//调用隐藏/显示弹出层
+				mui("#popover").popover('toggle', document.getElementById("demo"));
+			})
+			
+			document.getElementById("icon").addEventListener("tap", function() {
+				//调用隐藏/显示弹出层
+				mui("#popovers").popover('toggle', document.getElementById("box"));
+			})
+		</script>
+	</body>
+
+</html>

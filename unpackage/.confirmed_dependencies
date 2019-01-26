@@ -1,0 +1,51 @@
+{
+	"index.html": {
+		"resources": [
+			"homePage.html",
+			"brand.html"
+		],
+		"refer": [
+			"classification.html",
+			"my.html",
+			"homePage.html",
+			"shoppingCart.html",
+			"brand.html",
+			"home.html"
+		]
+	},
+	"my.html": {
+		"refer": [
+			"orderDetails.html",
+			"consignment.html",
+			"balance.html",
+			"quota.html",
+			"commision.html",
+			"my-dispose.html",
+			"my-finish.html",
+			"my-goods.html",
+			"my-commision.html",
+			"my-balance.html",
+			"my-quota.html"
+		]
+	},
+	"orderDetails.html": {
+		"refer": [
+			"my.html"
+		]
+	},
+	"commision.html": {
+		"refer": [
+			"my.html"
+		]
+	},
+	"quota.html": {
+		"refer": [
+			"my.html"
+		]
+	},
+	"shoppingCart.html": {
+		"refer": [
+			"shoppingCart-edit.html"
+		]
+	}
+}

@@ -1,0 +1,285 @@
+{
+	"login.html": {
+		"resources": [
+			"js/mui.min.js",
+			"login.html",
+			"css/mui.min.css",
+			"css/style.css",
+			"img/logo_1.png",
+			"case.html",
+			"my-set.html"
+		],
+		"refer": [
+			"login.html",
+			"case.html",
+			"my-set.html"
+		]
+	},
+	"index.html": {
+		"resources": [
+			"case.html",
+			"js/mui.min.js",
+			"css/iconfont.css",
+			"css/mui.min.css",
+			"css/style.css"
+		],
+		"refer": [
+			"my.html",
+			"case.html",
+			"police.html"
+		]
+	},
+	"my.html": {
+		"resources": [
+			"img/1.jpg",
+			"fonts/mui.ttf",
+			"human-center.html",
+			"set.html",
+			"js/mui.min.js",
+			"css/iconfont.css",
+			"css/mui.min.css",
+			"css/style.css",
+			"my-human-center.html",
+			"my-set.html",
+			"img/banner.png"
+		],
+		"refer": [
+			"my-human-center.html",
+			"my-set.html"
+		]
+	},
+	"case.html": {
+		"resources": [
+			"js/laydate.js",
+			"css/style.css",
+			"query-result.html",
+			"query-result-case.html",
+			"fonts/mui.ttf",
+			"case-query-result.html",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/laydate.css",
+			"font/iconfont.woff",
+			"img/banner.png",
+			"case-upload.html",
+			"login.html"
+		],
+		"refer": [
+			"query-result-case.html",
+			"case-query-result.html",
+			"case-upload.html",
+			"login.html"
+		]
+	},
+	"query-result.html": {
+		"resources": [
+			"police-upload.html"
+		],
+		"refer": [
+			"police-upload.html"
+		]
+	},
+	"police.html": {
+		"resources": [
+			"query-result.html",
+			"administer.html",
+			"fonts/mui.ttf",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/style.css",
+			"police-query-result.html",
+			"police-administer.html",
+			"js/laydate.js",
+			"css/laydate.css",
+			"font/iconfont.woff",
+			"img/banner.png",
+			"police-upload.html"
+		],
+		"refer": [
+			"query-result.html",
+			"police-query-result.html",
+			"police-administer.html",
+			"police-upload.html"
+		]
+	},
+	"police-upload.html": {
+		"resources": [
+			"police.html",
+			"police-query-result.html",
+			"img/banner.png",
+			"js/mui.min.js",
+			"img/1.jpg",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/style.css"
+		],
+		"refer": [
+			"police.html",
+			"police-query-result.html"
+		]
+	},
+	"set.html": {
+		"resources": [
+			"phone-number.html",
+			"mailbox.html",
+			"password.html",
+			"login.html"
+		],
+		"refer": [
+			"phone-number.html"
+		]
+	},
+	"phone-number.html": {
+		"resources": [
+			"set.html"
+		],
+		"refer": [
+			"set.html"
+		]
+	},
+	"mailbox.html": {
+		"resources": [
+			"set.html"
+		],
+		"refer": [
+			"set.html"
+		]
+	},
+	"password.html": {
+		"resources": [
+			"set.html"
+		],
+		"refer": [
+			"set.html"
+		]
+	},
+	"query-result-case.html": {
+		"resources": [
+			"police-upload.html",
+			"case.html"
+		],
+		"refer": [
+			"police-upload.html",
+			"case.html"
+		]
+	},
+	"case-query-result.html": {
+		"resources": [
+			"case.html",
+			"police-upload.html",
+			"case-upload.html",
+			"js/mui.min.js",
+			"img/1.jpg",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/style.css",
+			"img/banner.png"
+		],
+		"refer": [
+			"case.html",
+			"police-upload.html",
+			"case-upload.html"
+		]
+	},
+	"case-upload.html": {
+		"resources": [
+			"case.html",
+			"case-query-result.html",
+			"fonts/mui.ttf",
+			"img/1.jpg"
+		],
+		"refer": [
+			"case.html",
+			"case-query-result.html"
+		]
+	},
+	"police-query-result.html": {
+		"resources": [
+			"police-upload.html",
+			"js/mui.min.js",
+			"img/1.jpg",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/style.css",
+			"img/banner.png"
+		],
+		"refer": [
+			"police-upload.html"
+		]
+	},
+	"my-phone-number.html": {
+		"resources": [
+			"my-set.html"
+		],
+		"refer": [
+			"my-set.html"
+		]
+	},
+	"my-set.html": {
+		"resources": [
+			"my-phone-number.html",
+			"my-mailbox.html",
+			"my-password.html",
+			"login.html",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/style.css",
+			"img/banner.png"
+		],
+		"refer": [
+			"my-phone-number.html",
+			"my-mailbox.html",
+			"my-password.html",
+			"login.html"
+		]
+	},
+	"my-mailbox.html": {
+		"resources": [
+			"my-set.html",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/style.css"
+		],
+		"refer": [
+			"my-set.html"
+		]
+	},
+	"my-password.html": {
+		"resources": [
+			"my-set.html",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/style.css",
+			"img/banner.png"
+		],
+		"refer": [
+			"my-set.html"
+		]
+	},
+	"my-human-center.html": {
+		"resources": [
+			"js/mui.min.js",
+			"img/1.jpg",
+			"css/mui.min.css",
+			"css/style.css",
+			"fonts/mui.ttf",
+			"img/banner.png"
+		],
+		"refer": []
+	},
+	"police-administer.html": {
+		"resources": [
+			"police.html",
+			"img/banner.png",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/style.css"
+		],
+		"refer": [
+			"police.html"
+		]
+	}
+}

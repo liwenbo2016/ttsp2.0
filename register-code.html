@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<!--<link href="css/mui.min.css" rel="stylesheet" />-->
+		<link rel="stylesheet" type="text/css" href="css/register.css"/>
+		<script src="js/pixel.js"></script>
+	</head>
+	<body>
+		<div class="bg"></div>
+		<div class="title">完善会员资料</div>
+		<div class="logo">
+			<img src="img/2.png"/>
+		</div>
+		<div class="form">
+			<!--<div class="form-item">
+				<div class="left">
+					<i class="r-icon icon-user"></i> <span class="text">推荐码</span><i class="line"></i>
+				</div>
+				<input type="text" disabled class="first" id="c" value="" placeholder=""/>
+			</div>-->
+			<div class="form-item" style="margin-top: 1.1rem;">
+				<div class="left"><i class="r-icon icon-phone"></i></div>
+				<input type="text" maxlength="11" class="input" id="phone" value="" placeholder="请输入手机号码"/>
+			</div>
+			<div class="form-item">
+				<div class="left"><i class="r-icon icon-code"></i></div>
+				<input type="text" class="input" id="code" value="" placeholder="请输入验证码"/>
+				<div class="right" id="sendsms">获取验证码</div>
+			</div>
+			<div class="form-item">
+				<div class="left"><i class="r-icon icon-login"></i></div>
+				<input type="password" class="input" id="loginpwd" value="" placeholder="请设置登录密码"/>
+			</div>
+			<div class="form-item">
+				<div class="left"><i class="r-icon icon-login"></i></div>
+				<input type="password" class="input" id="valloginpwd" value="" placeholder="请再次输入登录密码"/>
+			</div>
+			<div class="form-item" style="text-align: center;">
+				<button id="submit" class="save">下一步</button>
+			</div>
+		</div>
+		<div id="alert">
+			<span id="alert-txt"></span>
+		</div>
+		<!--<script src="js/mui.min.js"></script>-->
+		<script type="text/javascript">
+//			mui.init();
+			var second = 60, timer = null;
+			var smsEl = document.getElementById('sendsms');
+			smsEl.onclick = function (e) {
+				if (!validatePhone(getValueById('phone'))) {
+//					console.log('请输入手机号');
+					showAlert('请输入正确的手机号');
+				} else {
+					timer = setInterval(setCodeHtml, 1000);
+				}
+			}
+			document.getElementById('submit').onclick = function () {
+				var phone = getValueById('phone');
+				var code = getValueById('code');
+				if (!validatePhone(phone)) {
+					showAlert('请输入正确的手机号码');
+					return;
+				}
+				if (!code) {
+					showAlert('请输入验证码');
+					return;
+				}
+				window.location.href = 'register-password.html';
+			}
+			document.getElementById('loginpwd').onblur = function (e) {
+				var loginpwd = getValueById('loginpwd');
+				var valpwd = getValueById('valloginpwd');
+				if (valpwd === '') {
+					return;
+				}
+				if (loginpwd !== valpwd) {
+					showAlert('两次输入的登录密码不一致')
+				}
+			}
+			document.getElementById('valloginpwd').onblur = function (e) {
+				var loginpwd = getValueById('loginpwd');
+				var valpwd = getValueById('valloginpwd');
+				if (loginpwd === '') {
+					showAlert('请输入登录密码');
+					return
+				}
+				if (valpwd === '') {
+					showAlert('请确认登录密码');
+					return
+				}
+				if (loginpwd !== valpwd) {
+					showAlert('两次输入的登录密码不一致')
+				}
+			}
+			function setCodeHtml () {
+				if (second >= 0) {
+					smsEl.innerText = second + 's';
+					second--;
+				} else if (timer) {
+					clearInterval(timer);
+					smsEl.innerText = '重新获取';
+					timer = null;
+				}
+			}
+			function getValueById (id) {
+				return document.getElementById(id).value;
+			}
+			
+			/* 弹出提示 */
+			function showAlert(text) {
+				var al = document.getElementById('alert')
+				document.getElementById('alert-txt').innerText = text;
+				al.style.cssText = 'opacity: 1;';
+				setTimeout(function () {
+					al.style.cssText = 'opacity: 0;'
+				}, 2000);
+			}
+			function validatePhone (phone) {
+				return /^1[3-9][0-9]\d{4,8}$/.test(phone);
+			}
+		</script>
+	</body>
+
+</html>

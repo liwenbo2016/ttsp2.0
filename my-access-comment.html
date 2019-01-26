@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+	<link rel="stylesheet" href="css/iconfont.css" />
+	<link rel="stylesheet" href="css/commit.css" />
+	<link rel="stylesheet" href="css/ht.css"/>
+	<script src="js/pixel.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav mui_myAccess_head">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">标题</h1>
+	</header>
+	<div class="mui-content mui_accessComment_wrap">
+		<div class="mui-table-view mui_accessComment_goodsWrap">
+			<div class="mui-table-view-cell mui-media mui_accessComment_goods">
+				<img class="mui-media-object mui-pull-left mui_accesssComment_goodsImg" src="img/brand_goods3.jpg">
+				<div class="mui-media-body">
+					<p class="mui_comment_starBar">
+						<!-- <i data-index="1" class="mui-icon mui_icon-star"></i>
+						<i data-index="2" class="mui-icon mui-icon-star"></i>
+						<i data-index="3" class="mui-icon mui-icon-star"></i>
+						<i data-index="4" class="mui-icon mui-icon-star"></i>
+						<i data-index="5" class="mui-icon mui-icon-star"></i> -->
+						<i data-index="1" class=" mui_icon_star"></i>
+						<i data-index="2" class=" mui_icon_star"></i>
+						<i data-index="3" class=" mui_icon_star"></i>
+						<i data-index="4" class=" mui_icon_star"></i>
+						<i data-index="5" class=" mui_icon_star"></i>
+				
+					</p>
+				</div>		
+			</div>		
+		</div>
+		
+		<form class="mui_commentArea_case">
+			<p class="mui_commentArea_title">分享你的使用体验吧！</p>
+			<div class="mui-input-row mui_commentArea_txtCase">
+				<textarea rows="5"  placeholder="您的评价会帮助更多用户哦!"></textarea>
+			</div>
+			<div class="mui-button-row">
+				<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined">提交</button>	
+			</div>
+		</form>
+	</div>
+	
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		mui.init()
+		mui.ready(function () {
+			var obj_star = document.getElementsByClassName('mui_icon_star')
+			var listenStar = mui('.mui_comment_starBar').on('click' , '.mui_icon_star' ,function(){
+				var index = parseInt(this.getAttribute("data-index"));//获取当前元素的索引值
+				handlerStar(index)
+				console.log(index)
+			})
+			// star
+			function handlerStar(index){
+				
+				for(var j =4 ; j >= index ; j--){
+					obj_star[j].setAttribute('class','mui_icon_star')
+				}
+
+				for(var i =0 ; i < index ; i++){	
+					obj_star[i].setAttribute('class','mui_icon_star mui_icon_star_on')
+				}
+			}
+		})
+		
+	</script>
+</body>
+</html>

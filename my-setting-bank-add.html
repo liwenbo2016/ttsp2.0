@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/commit.css"/>
+		<link rel="stylesheet" type="text/css" href="css/setting.css"/>
+		<script src="js/pixel.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-icon-arrowleft mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title mui-align-left">添加银行卡</h1>
+		</header>
+		<div class="mui-content">
+		    <form class="mui-input-group">
+		        <!--<div class="mui-input-row">
+		            <label>持卡人</label>
+		            <input type="text" class="mui-input-clear" placeholder="请输入持卡人">
+		        </div>
+		        <div class="mui-input-row">
+		            <label>卡号</label>
+		            <input type="text" placeholder="请输入银行卡号">
+		        </div>-->
+		        <div class="mui-input-row">
+		            <label>开户姓名</label>
+		            <input type="text" class="mui-input-clear" placeholder="请输入姓名">
+		        </div>
+		        <div class="mui-input-row">
+		            <label>开户银行</label>
+		            <div class="mui-select" id="selectbank">
+		            	<div class="mui-noselect">请选择银行</div>
+		            	<div class="mui-select-value"></div>
+		            </div>
+		            <!--<input type="text" class="mui-select" placeholder="请选择银行">-->
+		        </div>
+		        <div class="mui-input-row">
+		            <label>分行名称</label>
+		            <input type="text" class="mui-input-clear" placeholder="请输入分行名称">
+		        </div>
+		        <div class="mui-input-row">
+		            <label>银行卡号</label>
+		            
+		            <input type="text" class="mui-input-clear" placeholder="请输入银行卡号">
+		        </div>
+		    </form>
+		    <div class="mui-next-warpper">
+		    	<button onclick="location.href='my-setting-bank-success.html'" type="button" class="mui-btn mui-btn-blue">确定</button>
+		    </div>
+		    <div class="mui-tip" style="padding-left: 15px; padding-right: 15px;">
+		    	重要提示：<br>
+		    	为保证您的资金安全，请填写本人真实有效资料、如资料填写错误、产生资产损失及收款延误等后果责任自负。
+		    </div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/mui.picker.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var picker = new mui.PopPicker();
+			picker.setData([{value:'ny',text:'农业银行'}, {value: 'jt', text: '交通银行'}]);
+			document.getElementById('selectbank').addEventListener('tap', function (e) {
+				var self = this;
+				picker.show(function (selectItems) {
+					self.querySelector('.mui-noselect').style.cssText = 'display: none;';
+					self.querySelector('.mui-select-value').innerText = selectItems[0].text;
+				    console.log(selectItems[0].text);
+				    console.log(selectItems[0].value);
+				});
+			});
+		</script>
+	</body>
+
+</html>

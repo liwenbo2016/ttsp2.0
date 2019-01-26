@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/mui.poppicker.css"/>
+		<link rel="stylesheet" type="text/css" href="css/commit.css"/>
+		<link rel="stylesheet" type="text/css" href="css/ht.css"/>
+		<script src="js/pixel.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-icon-arrowleft mui-action-back mui-icon  mui-pull-left"></a>
+		    <h1 class="mui-title">添加商品</h1>
+		</header>
+		<div class="mui-content mui_addGoods_content">			
+		    <form class="mui-table-view mui_goodsAdd_group">
+		        <div class="mui-table-view-cell mui_goodsAdd_item">
+		            <label>商品名称：</label>
+		            <input type="text" class="mui-input-clear" placeholder="">
+		        </div>
+				 <div class="mui-table-view-cell mui_goodsAdd_item">
+				    <label>商品分类：</label>
+				    <input id="mui_goodsTypeInput" type="text" class="mui-input-clear" placeholder="" readonly>
+					<i class="mui-icon  mui-icon-arrowright mui-push-right"></i>	
+				</div>
+		        <div class="mui-table-view-cell mui_goodsAdd_item mui-height-auto mui_textEditArea_row">
+		            <label>商品详情：</label>
+		            
+		            <div class="mui_textEditArea" >
+						<!-- textarea 需要改成富文本编辑 -->
+						<textarea name="" rows="4" cols="" placeholder=""></textarea>
+					</div>
+		        </div>
+		        <div class="mui-table-view-cell mui_goodsAdd_item mui_item_shortLabel">
+		            <label>售价：</label>
+		            <input type="text" placeholder="">
+		        </div>
+		        <div class="mui-table-view-cell mui_goodsAdd_item mui_item_shortLabel">
+		            <label>原价：</label>
+		            <input type="text" placeholder="">
+		        </div>
+		        <div class="mui-table-view-cell mui_goodsAdd_item mui_item_shortLabel">
+		            <label>参数：</label>
+		            <input type="text" placeholder="">
+		        </div>
+		        <div class="mui-table-view-cell mui_goodsAdd_item mui-height-auto mui_item_midLabel">
+			        <label>封面图：</label>
+			        <div class="mui-file">
+			        	<input type="file" placeholder="">
+			        	<div class="mui-upload">
+			        		<span class="mui-icon mui-icon-plusempty"></span>
+			        		<div class="">点击上传</div>
+			        	</div>
+			        	<img style="max-width: 100%; max-height: 2.7027027027027026rem;" class="img" src=""/>
+			        </div>
+			    </div>
+			    <div class="mui-table-view-cell mui_goodsAdd_item mui-height-auto mui_item_midLabel">
+			        <label>封面图：</label>
+			        <div class="mui-file">
+			        	<input type="file" placeholder="">
+			        	<div class="mui-upload">
+			        		<span class="mui-icon mui-icon-plusempty"></span>
+			        		<div class="mui_fileBtnTxt">点击上传</div>
+			        	</div>
+			        	<img style="max-width: 100%; max-height: 2.7027027027027026rem;" class="img" src=""/>
+			        </div>
+			    </div>
+		    </form>
+		    <div class="mui-addGoods-saveCase" >
+		    	<button type="button" id="submit" class="mui-btn mui-btn-primary mui-btn-block mui-btn-submit">保存</button>
+		    </div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+	
+
+		<script type="text/javascript">
+			mui.init();
+			// open file
+			mui('.mui-file').each(function () {
+				var img = this.querySelector('.img');
+				var upload = this.querySelector('.mui-upload');
+				this.querySelector('input[type=file]').onchange = function (e) {
+					var obj = e.target.files[0];
+					var fr = new FileReader();
+					console.log(obj);
+					fr.onload = function () {
+						img.src = this.result;
+						img.style.display = 'inline-block';
+						upload.style.display = 'none';
+					}
+					fr.readAsDataURL(obj);
+				}
+			})
+			// typy choose
+			var picker = new mui.PopPicker();
+			 picker.setData([{
+					value: "0",
+					text: "服饰"
+				}, {
+					value: "1",
+					text: "餐饮"
+				}, {
+					value: "2",
+					text: "酒店"
+				}, {
+					value: "3",
+					text: "旅游"
+				}, {
+					value: "4",
+					text: "科技"
+				}])
+			var objType = document.getElementById('mui_goodsTypeInput')
+				objType.addEventListener('click',function(){		
+					picker.show(function (selectItems) {					
+						objType.value = selectItems[0].text				
+					 })
+					 
+				})
+				 
+
+	
+		</script>
+	</body>
+
+</html>

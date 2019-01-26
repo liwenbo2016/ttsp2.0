@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>收藏夹</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+	<link rel="stylesheet" href="css/commit.css" />
+	<link rel="stylesheet" type="text/css" href="css/ht.css"/>
+	<script src="js/pixel.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav mui_myfootprint_head">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" "></a>
+		<h1 class="mui-title">收藏夹</h1>
+	</header>
+	
+	<div class="mui-content">
+		<div id="mui_listWrap">
+			<!-- footprint oneday -->
+			<div class="mui_footprint_case mui_footprint_editCase">
+				<!-- <p class="mui_footprint_date">今天</p> -->
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-media mui_footprint_item">
+						<div class="mui-input-row mui-checkbox mui-left mui_footprint_checkbox" >
+						  <input class="mui_ftprint_checkbox" name="checkbox1" type="checkbox"  >
+						</div>
+						
+						<div class="mui_footprint_itemGoods">
+							<img class="mui-media-object mui-pull-left" src="img/brand_goods3.jpg">
+							<div class="mui-media-body">
+								<p class="mui-ellipsis mui_footprint_dec">威廉芳婷赤霞珠进口红酒（2瓶装）支</p>
+								<p class="mui-ellipsis mui_footprint_price">¥988.0</p>
+							</div>
+						</div>					
+					</li>	
+					<li class="mui-table-view-cell mui-media mui_footprint_item">
+						<div class="mui-input-row mui-checkbox mui-left mui_footprint_checkbox" >
+						  <input class="mui_ftprint_checkbox" name="checkbox1" type="checkbox"  >
+						</div>
+						
+						<div class="mui_footprint_itemGoods">
+							<img class="mui-media-object mui-pull-left" src="img/brand_goods3.jpg">
+							<div class="mui-media-body">
+								<p class="mui-ellipsis mui_footprint_dec">威廉芳婷赤霞珠进口红酒（2瓶装）支</p>
+								<p class="mui-ellipsis mui_footprint_price">¥988.0</p>
+							</div>
+						</div>
+						
+					</li>	
+					<li class="mui-table-view-cell mui-media mui_footprint_item">
+						<div class="mui-input-row mui-checkbox mui-left mui_footprint_checkbox" >
+						  <input class="mui_ftprint_checkbox" name="checkbox1" type="checkbox"  >
+						</div>
+						
+						<div class="mui_footprint_itemGoods">
+							<img class="mui-media-object mui-pull-left" src="img/brand_goods3.jpg">
+							<div class="mui-media-body">
+								<p class="mui-ellipsis mui_footprint_dec">威廉芳婷赤霞珠进口红酒（2瓶装）支</p>
+								<p class="mui-ellipsis mui_footprint_price">¥988.0</p>
+							</div>
+						</div>
+						
+					</li>	
+				</ul>
+			</div>
+		</div>
+		
+	</div>
+	
+	<div class="mui_fontprint_ftBtnBar">
+		<button type="button" class="mui-btn mui_allBtn" id="mui_allCheck" >
+		  <div class="mui-input-row mui-checkbox mui-left">
+		    <input  class="mui_allCheck_ico " type="checkbox"  >
+		    <span class="mui_allCheck_label">全选</span>
+		  </div>
+		</button>
+		<button type="button" id="mui_ftDelete" class=" mui_ft_delelteBtn ">删除</button>
+	</div>
+	
+	
+	
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	mui.init()
+	mui.ready(function () {
+		var allCheckList  = document.getElementsByClassName('mui_ftprint_checkbox')
+		var allCheck_ico  = document.getElementsByClassName('mui_allCheck_ico')
+		
+		// checkbox全选
+		document.getElementById("mui_allCheck").addEventListener("click", function(){
+			var checkStatus = true	
+			for(var i = 0 ; i < allCheckList.length ; i++ ){
+				if(allCheckList[i].checked == false){
+					checkStatus = false;				
+				}				
+			}
+			if(checkStatus){
+				allCheckOff(allCheckList)
+				allCheck_ico[0].checked =false;
+			}
+			else{
+				allCheckOn(allCheckList)
+				allCheck_ico[0].checked =true;
+			}
+		});
+		// 删除
+		document.getElementById('mui_ftDelete').addEventListener('click',function(){
+			isDeleteFtpt()
+		})
+		
+		function allCheckOn(mList){
+			for(var i = 0 ; i < mList.length ; i++ ){
+				mList[i].checked = true;		
+			}
+		}
+		function allCheckOff(mList){
+			for(var i = 0 ; i < mList.length ; i++ ){
+				mList[i].checked = false;		
+			}
+		}
+		// 子集false 即父级false
+		mui('body').on('change' , '.mui_ftprint_checkbox ',function(){
+			if(this.checked){
+				
+			}
+			else{
+				allCheck_ico[0].checked = (false)
+			}
+		})
+		function isDeleteFtpt(){
+			mui.confirm('确定删除改收藏吗？',' ',['取消','确认'],function (e) {
+				var  backIndex  = e.index
+				if(backIndex == 1){
+					// 删除
+					btnDelete()	
+					// 是否复位allChk
+					noChk_listener()
+				}
+			},'div')
+		}
+		// 删除选中项
+		function btnDelete(){
+			mui('.mui_ftprint_checkbox').each(function(){
+				if(this.checked){
+					var chk_case = this.parentNode.parentNode
+					var chk_className =  chk_case.className
+					var chk_className_IsHas =  chk_className.indexOf('mui_footprint_item')
+					if(chk_className_IsHas>-1){
+						chk_case.parentNode.removeChild(chk_case)
+					}
+				}						
+			})
+		}
+		// 没有内容,复位allchk
+		function noChk_listener(){
+			var ChkLength = mui('.mui_ftprint_checkbox').length
+			if(ChkLength < 1){
+				allCheck_ico[0].checked = false
+			}
+		}
+	})
+	
+	</script>
+</body>
+</html>

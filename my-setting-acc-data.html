@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/commit.css"/>
+		<link rel="stylesheet" type="text/css" href="css/setting.css"/>
+		<link rel="stylesheet" type="text/css" href="css/cropper.min.css"/>
+		<script src="js/pixel.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+	        	.cropper-bg {
+	        		background-image: none;
+	        	}
+	        	.crop {
+	        		position: fixed;
+	        		top:0;
+	        		bottom: 0;
+	        		left: 0;
+	        		right: 0;
+	        		z-index: 100;
+	        		display: none;
+	        	}
+	        	.crop .mui-content {
+	        		height: 100%;
+	        		box-sizing: border-box;
+	        	}
+	        	.crop .crop-top {
+	        		height: 50px;
+	        		background-color: #fff;
+	        		padding-left: 15px;
+	        		box-sizing: border-box;
+	        	}
+	        	.crop .crop-bottom {
+	        		position: absolute;
+	        		box-sizing: border-box;
+	        		width: 100%;
+	        		bottom: 0;
+	        		height: 50px;
+	        		padding: 0 15px;
+	        		text-align: center;
+	        	}
+	        	.indicator {
+	        		position: fixed;
+	        		top: 0;
+	        		right: 0;
+	        		bottom: 0;
+	        		left: 0;
+	        		z-index: 100;
+	        		display: flex;
+	        		align-items: center;
+	        		justify-content: center;
+	        	}
+	        </style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-icon-arrowleft mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title mui-align-left">我的资料</h1>
+		</header>
+		<div class="mui-content mui-acc-page">
+		    <ul class="mui-table-view" style="margin-top: 1px;">
+	            <li class="mui-table-view-cell">
+	                <a class="mui-navigate-right">
+	                    <div class="left">
+	                    	我的头像
+	                    </div>
+			            <label class="right"><input type="file" name="" id="headfile" value="" /><img id="headpic" src="img/2.png" width="60" style="vertical-align: middle;"></label>
+			        </a>
+	            </li>
+	            <li class="mui-table-view-cell">
+	                <a>
+	                    <div class="left">用户名</div>
+	                    <div class="right">1388555</div>
+	                </a>
+	            </li>
+	            <li class="mui-table-view-cell">
+	                <a>
+	                    <div class="left">昵称</div>
+	                    <div class="right"><input class="input" type="text" name="nickname" id="nickname" placeholder="请输入昵称" value="wang" /></div>
+	                </a>
+	            </li>
+	            <li class="mui-table-view-cell">
+	                <a>
+	                    <div class="left">手机号</div>
+	                    <div class="right">1342353345</div>
+	                </a>
+	            </li>
+	            <li class="mui-table-view-cell">
+	                <a>
+	                    <div class="left">邮箱</div>
+	                    <div class="right"><input class="input" type="text" name="email" id="email" placeholder="请填写邮箱" value="" /></div>
+	                </a>
+	            </li>
+	            <li class="mui-table-view-cell">
+	                <a class="mui-navigate-right">
+	                    <div class="left">性别</div>
+	                    <div class="right"><input class="input" type="text" name="sex" id="sex" placeholder="请选择" value="" /></div>
+	                </a>
+	            </li>
+	            <li class="mui-table-view-cell">
+	                <a class="mui-navigate-right">
+	                    <div class="left">生日</div>
+	                    <div class="right"><input class="input" type="text" name="birthday" id="birthday" placeholder="请选择" value="" /></div>
+	                </a>
+	            </li>
+	            <li class="mui-table-view-cell">
+	                <a>
+	                    <div class="left">推荐人编号</div>
+	                    <div class="right">1234</div>
+	                </a>
+	            </li>
+	        </ul>
+	        <!--<span class="mui-spinner"></span>-->
+	        <div id="crop" class="crop">
+	        	<header class="mui-bar mui-bar-nav">
+				    <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left"></a>
+				    <h1 class="mui-title mui-align-left">修改头像</h1>
+				</header>
+				<div class="mui-content">
+				    <img id="image" src="img/0.jpg">
+				</div>
+				<div class="crop-bottom">
+					<button type="button" id="getImg" class="mui-btn mui-btn-blue">使用</button>
+					<!--<button type="button" class="mui-btn mui-pull-right">取消</button>-->
+				</div>
+			</div>
+	        <button type="button" class="mui-btn mui-btn-yellow mui-btn-block">保存设置</button>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/mui.picker.min.js"></script>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="js/cropper.min.js"></script>
+		<script src="js/common.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var options = {
+				  aspectRatio: 1,
+				  viewMode: 2,
+				  dragMode: 'move',
+				  cropBoxResizable: false,
+				  guides: false,
+				  crop: function(event) {
+				  }
+			}
+			var picker = new mui.PopPicker();
+			picker.setData([{value:'0',text:'男'},{value: '1', text: '女'}]);
+			document.getElementById('sex').addEventListener('tap', function () {
+				var self = this;
+				picker.show(function (selectItems) {
+					self.value = selectItems[0].text;
+				});
+//				console.log('add');
+			});
+			var dtPicker = new mui.DtPicker({type: 'date', beginYear: 1940});
+			document.getElementById('birthday').addEventListener('tap', function () {
+				var self = this;
+				dtPicker.show(function (date) {
+					self.value = date.value;
+				})
+			});
+			var img = document.getElementById('headpic');
+			
+			var cop = document.getElementById('crop');
+			document.getElementById('headfile').addEventListener('change', function (e) {
+//				showLoading()
+				var obj = e.target.files[0];
+				
+				if (!obj) {return}
+				cop.style.display = 'block';
+				var url = getObjectURL(obj);
+				$('#image').cropper('destroy').attr('src', url).cropper(options);
+			});
+			
+			/* 获取头像裁剪后的数据 */
+			document.getElementById('getImg').addEventListener('tap', function () {
+		        var cas=$('#image').cropper('getCroppedCanvas');
+		        var base64url=cas.toDataURL('image/jpeg');
+		        cas.toBlob(function (e) {
+//		            console.log(e);  //生成Blob的图片格式
+		        })
+		        img.src = base64url;
+//		        console.log(base64url); //生成base64图片的格式
+		        cop.style.display = 'none';
+			});
+			
+			function getObjectURL(file) {  
+			     var url = null;  
+			     if (window.createObjcectURL != undefined) {  
+			         url = window.createOjcectURL(file);  
+			     } else if (window.URL != undefined) {  
+			         url = window.URL.createObjectURL(file);  
+			     } else if (window.webkitURL != undefined) {  
+			         url = window.webkitURL.createObjectURL(file);  
+			     }  
+			     return url;  
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>案件采集</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/laydate.css" />
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav mui-bar-change">
+		    <h1 class="mui-title mui-title-se">案件采集</h1>
+		</header>
+		<div class="mui-content">
+            <div class="mui-input-set">
+				<div class="mui-input-row">
+				    <label>案件编号</label>
+			        <input type="text" class="mui-input-clear" placeholder="输入报警人姓名">
+				</div>
+			</div>
+			<div class="mui-input-set">
+				<div class="mui-input-row">
+				    <label>案件名称</label>
+			        <input type="text" class="mui-input-clear" placeholder="输入案件名称">
+				</div>
+			</div>
+			<a href="#">
+				<div class="mui-input-set">
+					<div class="mui-input-row">
+					    <label>案件类型</label>
+				        <span class="mui-icon mui-icon-arrowright mui-pull-right mui-bott"></span>
+					</div>
+				</div>
+			</a>
+			<div class="mui-input-set">
+				<div class="mui-input-row">
+				    <label>受理时间</label>
+			        <input type="text" class="mui-input-clear" placeholder="开始时间   -  结束时间" id="demo">
+				</div>
+			</div>
+			<div class="mui-input-set">
+				<div class="mui-input-row">
+				    <label>立案时间</label>
+			        <input type="text" class="mui-input-clear" placeholder="开始时间   -  结束时间" id="box">
+				</div>
+			</div>
+			<a href="#">
+				<div class="mui-input-set">
+					<div class="mui-input-row">
+					    <label>承办单位</label>
+				        <span class="mui-icon mui-icon-arrowright mui-pull-right mui-bott"></span>
+					</div>
+				</div>
+			</a>
+			<div class="mui-input-set">
+				<div class="mui-input-row">
+				    <label>嫌疑人</label>
+			        <input type="text" class="mui-input-clear" placeholder="输入嫌疑人姓名">
+				</div>
+			</div>
+			<div class="mui-input-set">
+				<div class="mui-input-row">
+				    <label>涉案人</label>
+			        <input type="text" class="mui-input-clear" placeholder="输入涉案人姓名">
+				</div>
+			</div>
+			<a class="mui-btn-bto" id="layout">查询</a>
+		</div>
+		
+		<script src="js/laydate.js"></script>
+		<script>
+			lay('#version').html('-v'+ laydate.v);
+			    laydate.render({
+			      elem: '#demo'
+			      ,range: true
+			    });
+			    laydate.render({
+			      elem: '#box'
+			      ,range: true
+			    });
+		</script>
+		
+		
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			document.getElementById('layout').addEventListener('tap', function() {
+				mui.openWindow({
+					url: 'case-query-result.html', 
+					id: 'case-query-result.html',
+					show: {
+			            aniShow: 'pop-in',
+			            duration: 250
+			        }
+				})			
+			});	
+		</script>
+	</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>管辖单位</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav mui-bar-change">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">管辖单位</h1>
+		    <a class="mui-action-back mui-pull-right mui-bar-right">确定</a>
+		</header>
+		<div class="mui-content mui-content-bg">
+		    <div id='list' class="mui-indexed-list">
+		        <div class="mui-indexed-list-search mui-input-row mui-search mui-search-indent">
+		            <input type="search" class="mui-input-clear mui-indexed-list-search-input" placeholder="搜索" style="height:30px;">
+		        </div>
+		    </div>
+		    <div class="mui-input-outset">
+		    	<div class="mui-input-width">
+		    		<input name="checkbox1" value="" type="checkbox">
+		    	</div>
+		    	<div class="mui-span-width">
+		    		<span>深圳市公安局指挥部</span>
+		    	</div>
+		    </div>
+		    <div class="mui-input-outset">
+		    	<div class="mui-input-width">
+		    		<input name="checkbox1" value="" type="checkbox">
+		    	</div>
+		    	<div class="mui-span-width">
+		    		<span>深圳市公安局指挥部指挥处指挥科</span>
+		    	</div>
+		    </div>
+		    <div class="mui-input-outset">
+		    	<div class="mui-input-width">
+		    		<input name="checkbox1" value="" type="checkbox">
+		    	</div>
+		    	<div class="mui-span-width">
+		    		<span>深圳市公安局人口管理处暂住人口及房屋出租管理办公室</span>
+		    	</div>
+		    </div>
+		    
+		    <div class="mui-input-outset">
+		    	<div class="mui-input-width">
+		    		<input name="checkbox1" value="" type="checkbox">
+		    	</div>
+		    	<div class="mui-span-width">
+		    		<span>深圳市公安局指挥部</span>
+		    	</div>
+		    </div>
+		    <div class="mui-input-outset">
+		    	<div class="mui-input-width">
+		    		<input name="checkbox1" value="" type="checkbox">
+		    	</div>
+		    	<div class="mui-span-width">
+		    		<span>深圳市公安局指挥部指挥处指挥科</span>
+		    	</div>
+		    </div>
+		</div>  
+		
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui('.mui-bar').on('tap','.mui-btn',function(){
+			    mui('#topPopover').popover('show',document.getElementById("list")); 
+			});
+		</script>
+	</body>
+
+</html>

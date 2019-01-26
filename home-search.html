@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/home.css"/>
+		<link rel="stylesheet" type="text/css" href="css/commit.css"/>
+		<script src="js/pixel.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body class="mui-search-page">
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-icon-arrowleft mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">搜索商品</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-input">
+				<div class="mui-input-row mui-search">
+			    	<input type="search" id="search" class="mui-input-clear" placeholder="请输入关键字">
+				</div>
+				<div id="searchBtn" class="mui-btn-search">
+			    	搜索
+			    </div>
+			</div>
+		    
+			<div class="mui-search-warpper">
+				<div class="mui-stitle">
+					热门搜索
+				</div>
+				<div class="mui-btns">
+					<div class="mui-btn-row">
+						<button type="button" class="mui-btn">电视机</button>
+					</div>
+					<div class="mui-btn-row">
+						<button type="button" class="mui-btn">笔记本</button>
+					</div>
+					<div class="mui-btn-row">
+						<button type="button" class="mui-btn">手机</button>
+					</div>
+					<div class="mui-btn-row">
+						<button type="button" class="mui-btn">空调</button>
+					</div>
+					<div class="mui-btn-row">
+						<button type="button" class="mui-btn">电饭煲</button>
+					</div>
+				</div>
+				
+			</div>
+			<div class="mui-search-warpper" id="history">
+				<div class="mui-stitle">
+					历史搜索
+				</div>
+				<div class="mui-btns ">
+					<div class="mui-btn-row">
+						<button type="button" class="mui-btn">电视机</button>
+					</div>
+					<div class="mui-btn-row">
+						<button type="button" class="mui-btn">笔记本</button>
+					</div>
+					<div class="mui-btn-row">
+						<button type="button" class="mui-btn">手机</button>
+					</div>
+					<div class="mui-btn-row">
+						<button type="button" class="mui-btn">空调</button>
+					</div>
+				</div>
+			</div>
+			<div style="padding: 15px;"><button type="button" style="width: 100%;" id="clearbtn" class="mui-btn">清空历史记录</button></div>
+		</div>
+		
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			showHistoryHtml();
+			addHanlder(document.querySelectorAll('.mui-btns .mui-btn'));
+			
+			/* 监听关键字按钮  */
+			function addHanlder (els) {
+				mui.each(els, function () {
+					this.addEventListener('tap', function (e) {
+//						console.log(e.target);
+						addSearchValue(e.target.innerText);
+					});
+				});
+			}
+			
+			/* 添加搜索历史 */
+			function addSearchValue (value) {
+				var vals = JSON.parse(localStorage.getItem('keyword') || '[]');
+				console.log(vals, value);
+				var idx = vals.indexOf(value);
+				if (idx >= 0) {
+					vals.splice(idx, 1);
+				}
+				vals.push(value);
+				localStorage.setItem('keyword', JSON.stringify(vals));
+				showHistoryHtml();
+			}
+			
+			/* 显示搜索历史  */
+			function showHistoryHtml () {
+				var vals = JSON.parse(localStorage.getItem('keyword') || '[]');
+				var historyEl = document.getElementById('history');
+				if (vals.length < 1) {
+					historyEl.style.cssText = 'display: none;';
+				} else {
+					var htmlStr = '';
+					/* 从后向前遍历  */
+					for (var i = vals.length - 1; i >= 0; i--) {
+						htmlStr += '<div class="mui-btn-row"><button type="button" class="mui-btn">'+vals[i]+'</button></div>';
+					}
+					historyEl.querySelector('.mui-btns').innerHTML = htmlStr;
+					historyEl.style.cssText = 'display: block;';
+					addHanlder(historyEl.querySelectorAll('.mui-btn'));
+				}
+			}
+			
+			/* 监听搜索按钮 */
+			document.getElementById('searchBtn').addEventListener('tap', function () {
+				var val = document.getElementById('search').value;
+				if (val.trim()) {
+					addSearchValue(val);
+				} else {
+					mui.toast('请输入关键字');
+				}
+			});
+			/* 清空历史记录  */
+			document.getElementById('clearbtn').addEventListener('tap', function () {
+				localStorage.removeItem('keyword');
+				showHistoryHtml();
+			})
+		</script>
+	</body>
+
+</html>

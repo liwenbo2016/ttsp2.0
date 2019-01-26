@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/setting.css"/>
+		<link rel="stylesheet" type="text/css" href="css/commit.css"/>
+		<script src="js/pixel.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-icon-arrowleft mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title" style="font-size:16px;">意见反馈</h1>
+		</header>
+		<div class="mui-content">
+			
+		    <form class=" mui-table-view mui_feedBack_form">
+		        <div class=" mui-table-view-cell mui_feedBack_case">
+		            <label>用 户 名：</label>
+		            <input type="text" disabled class="mui-input-clear" value="我是" placeholder="input">
+		        </div>
+		        <div class="mui-table-view-cell mui_feedBack_case">
+		            <label>反馈主题：</label>
+		            <div class="mui-select" id="theme">
+		            	<span class="mui-noselect">请选择反馈主题</span>
+		            	<span id="themeVal" class="mui-select-value"></span>
+		            </div>
+		        </div>
+		        <div class=" mui-table-view-cell mui_feedBack_case" style="height: auto;">
+		            <label>反馈内容：</label>
+		            <!--<input type="text" placeholder="普通输入框">-->
+		            <textarea id="textarea" rows="4" placeholder="请输入反馈内容"></textarea>
+		        </div>
+		    </form>
+		</div>
+		<button type="button" id="save" class="mui-btn mui-btn-blue mui-btn-block mui_submitBtn">确认提交</button>
+		<script src="js/mui.min.js"></script>
+		<script src="js/mui.picker.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var picker = new mui.PopPicker();
+			picker.setData([{value:'zz',text:'智子'}]);
+			document.getElementById('theme').addEventListener('tap', function (e) {
+				picker.show(function (selectItems) {
+					e.target.querySelector('.mui-noselect').style.cssText = 'display: none;';
+					e.target.querySelector('.mui-select-value').innerText = selectItems[0].text;
+				    console.log(selectItems[0].text);//智子
+				    console.log(selectItems[0].value);//zz
+				});
+			});
+			document.getElementById('save').addEventListener('tap', function () {
+				var theme = document.getElementById('themeVal').innerText;
+				var content = document.getElementById('textarea').value;
+				if (!theme) {
+					mui.toast('请选择反馈主题');
+					return;
+				}
+				if (!content) {
+					mui.toast('请输入反馈内容');
+					return;
+				}
+			});
+		</script>
+	</body>
+
+</html>

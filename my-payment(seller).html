@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>我的订单</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/mui.min.css"/>
+		<link rel="stylesheet" href="css/commit.css"/>
+		<link rel="stylesheet" href="css/my-orderDetails.css"/>
+		<script src="js/pixel.js"></script>
+		<!--<link rel="stylesheet" href="css/my-consignment.css" />-->
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-my mui-action-back mui-icon mui-icon-left-nav mui-pull-left mui-icon-color"></a>
+		    <h1 class="mui-title">我的订单</h1>
+		</header>
+		<div class="mui-content">
+		    <div id="sliderSegmentedControl" class="mui-segmented-control">
+		    	<a href="#item1mobile" class="mui-control-item mui-active">待付款</a>
+		    	<a href="#item2mobile" class="mui-control-item">待处理</a>
+		    	<a href="#item3mobile" class="mui-control-item">待收货 </a>
+		    	<a href="#item4mobile" class="mui-control-item">已完成 </a>
+		    </div>
+		    <div class="mui-content-padded">
+                <div id="item1mobile" class="mui-control-content mui-active">
+                	<ul class="mui-table-view">
+                		<li class="mui-table-view-cell mui-li-top">
+                            <a href="my-order-details(buyer).html">
+								<img class="mui-media-object mui-pull-left" src="img/0.jpg">
+								<div class="mui-media-body mui-media-size">
+									<span>威廉方庭赤霞珠进口红酒（2瓶装）支</span>
+                					<span>数量：1000</span>
+								</div>
+							</a>
+							<div class="mui-li-buttom">
+								<div class="mui-bfont-color">
+	                				<span class="mui-font-infos">￥998.00</span>
+	                				<span class="mui-pull-right mui-green-color">买家：飞翔的雄鹰</span>
+	                		    </div>
+		                		<div class="mui-bfont-color">
+		                			<span>订单编号：</span>
+		                			<span>j12345621513162516551651</span>
+		                		</div>
+		                		<div class="mui-bfont-color">
+		                			<span>下单时间：</span>
+		                			<span>2019-01-06 15:45:33</span>
+		                		</div>
+		                		<div class="mui-bfont-color mui-span-widths">
+		                			<span>共计1000商品</span>
+		                			<span>合计：￥998.00</span>
+		                			<a href="#" class="mui-pull-right">立即收款</a>
+		                		</div>
+	                		</div>
+                		</li>
+                		
+                	</ul>
+                </div>
+                
+                <div id="item2mobile" class="mui-control-content">
+                	<ul class="mui-table-view">
+                		<li class="mui-table-view-cell mui-li-top">
+                			<a href="my-order-details(buyer).html">
+								<img class="mui-media-object mui-pull-left" src="img/0.jpg">
+								<div class="mui-media-body mui-media-size">
+									<span>威廉方庭赤霞珠进口红酒（2瓶装）支</span>
+                					<span>数量：1000</span>
+								</div>
+							</a>
+                            <div class="mui-li-buttom">
+	                			<div class="mui-bfont-color">
+	                				<span class="mui-font-infos">￥998.00</span>
+	                				<span class="mui-span-left-color">已付款</span>
+	                				<span class="mui-pull-right mui-green-color">买家：飞翔的雄鹰</span>
+	                		    </div>
+		                		<div class="mui-bfont-color">
+		                			<span>订单编号：</span>
+		                			<span>j12345621513162516551651</span>
+		                		</div>
+		                		<div class="mui-bfont-color">
+		                			<span>下单时间：</span>
+		                			<span>2019-01-06 15:45:33</span>
+		                		</div>
+		                		<div class="mui-bfont-color mui-span-widths">
+		                			<span>共计1000商品</span>
+		                			<span>合计：￥998.00</span>
+		                			<a href="#" class="mui-pull-right">点击发货</a>
+		                		</div>
+	                		</div>
+                		</li>
+                	</ul>
+                </div>
+                <div id="dialog"></div>
+                
+                <div id="item3mobile" class="mui-control-content">
+                	<ul class="mui-table-view">
+                		<li class="mui-table-view-cell mui-li-top">
+                			<a href="my-order-details(buyer).html">
+								<img class="mui-media-object mui-pull-left" src="img/0.jpg">
+								<div class="mui-media-body mui-media-size">
+									<span>威廉方庭赤霞珠进口红酒（2瓶装）支</span>
+                					<span>数量：1000</span>
+								</div>
+							</a>
+                            <div class="mui-li-buttom">
+	                			<div class="mui-bfont-color">
+	                				<span class="mui-font-infos">￥998.00</span>
+	                				<span class="mui-span-right-color">已发货</span>
+	                				<span class="mui-pull-right mui-green-color">买家：飞翔的雄鹰</span>
+	                		    </div>
+		                		<div class="mui-bfont-color">
+		                			<span>订单编号：</span>
+		                			<span>j12345621513162516551651</span>
+		                		</div>
+		                		<div class="mui-bfont-color">
+		                			<span>下单时间：</span>
+		                			<span>2019-01-06 15:45:33</span>
+		                		</div>
+		                		<div class="mui-bfont-color mui-span-widths">
+		                			<span>共计1000商品</span>
+		                			<span>合计：￥998.00</span>
+		                			<a href="#" class="mui-pull-right">物流明细</a>
+		                		</div>
+	                		</div>
+                		</li>
+                	</ul>
+                </div>
+                
+                <div id="item4mobile" class="mui-control-content">
+                	<ul class="mui-table-view">
+                		<li class="mui-table-view-cell mui-li-top">
+                			<a href="my-order-details(buyer).html">
+								<img class="mui-media-object mui-pull-left" src="img/0.jpg">
+								<div class="mui-media-body mui-media-size">
+									<span>威廉方庭赤霞珠进口红酒（2瓶装）支</span>
+                					<span>数量：1000</span>
+								</div>
+							</a>
+                            <div class="mui-li-buttom">
+	                			<div class="mui-bfont-color">
+	                				<span class="mui-font-infos">￥998.00</span>
+	                				<span class="mui-pull-right mui-green-color">买家：飞翔的雄鹰</span>
+	                		    </div>
+		                		<div class="mui-bfont-color">
+		                			<span>订单编号：</span>
+		                			<span>j12345621513162516551651</span>
+		                		</div>
+		                		<div class="mui-bfont-color">
+		                			<span>下单时间：</span>
+		                			<span>2019-01-06 15:45:33</span>
+		                		</div>
+		                		<div class="mui-bfont-color mui-span-widths">
+		                			<span>共计1000商品</span>
+		                			<span>合计：￥998.00</span>
+		                			<a href="#" class="mui-pull-right mui-gray-a">已完成</a>
+		                		</div>
+	                		</div>
+                		</li>
+                	</ul>
+                </div>
+            </div>
+		</div>
+		
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var urlId = getQueryString('id');
+			mui.each(document.getElementById('sliderSegmentedControl').querySelectorAll('.mui-control-item'), function () {
+				if (urlId) {
+					removeClass(this, 'mui-active');
+				}
+				if (this.getAttribute('href').indexOf(urlId) >= 0) {
+					addClass(this, 'mui-active')
+				}
+				
+			});
+			mui.each(document.querySelectorAll('.mui-control-content'), function () {
+				if (urlId) {
+					removeClass(this, 'mui-active');
+				}
+				if (this.getAttribute('id').indexOf(urlId) >= 0) {
+					addClass(this, 'mui-active')
+				}
+			});
+			function getQueryString(name) { 
+		        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+		        var r = window.location.search.substr(1).match(reg); 
+		        if (r != null) return unescape(r[2]); 
+		        return null;
+		    }
+			function hasClass(elements, cName) {
+			  	return !!elements.className.match(new RegExp("(\\s|^)" + cName + "(\\s|$)")); 
+			}
+			function addClass(elements, cName) {
+			  	if(!hasClass(elements, cName)) {
+			    	elements.className += " " + cName; 
+			  	}
+			}
+			function removeClass(elements, cName) {
+			  if (hasClass(elements,cName)) { 
+			    elements.className = elements.className.replace(new RegExp( "(\\s|^)" + cName + "(\\s|$)" ), " ");
+			  }
+			}
+		</script>
+	</body>
+</html>

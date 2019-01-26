@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>分享</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/my-share-copy.css" />
+		<script src="js/pixel.js"></script>
+	</head>
+	<body style="background:#fff;">
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left mui-icon-color"></a>
+		    <h1 class="mui-title">分享</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-div-bag">
+				<div class="mui-share-copy">
+				    <div class="mui-share-url">
+				    	<input type="text" id="url" class="mui-url-input mui-pull-left" value="http://www.baidu.com" />
+				    	<button class="btn mui-pull-right mui-btn-link" data-clipboard-target="#url">复制</button>
+				    </div>
+				    <div class="mui-share-box">
+				    	<div class="mui-share-erweima">
+				    		<img src="img/24.png" alt="" />
+				    	</div>
+				    	<div class="mui-share-info">
+				    		<p>长按二维码发送给好友</p>
+				    	    <p>让您拥有跟多合伙人，打造自己的消费商圈</p>
+				    	</div>
+				    </div>
+				</div>
+			</div>
+		    
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/clipboard.min.js"></script>
+		<script type="text/javascript">
+			var clipboard = new ClipboardJS('.btn');
+
+			clipboard.on('success', function(e) {
+				mui.toast('复制成功');
+			    /*console.info('Action:', e.action);
+			    console.info('Text:', e.text);
+			    console.info('Trigger:', e.trigger);*/
+			
+		    e.clearSelection();
+			});
+			
+			clipboard.on('error', function(e) {
+				mui.toast('复制失败');
+			    /*console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);*/
+			});
+		</script>
+	</body>
+
+</html>

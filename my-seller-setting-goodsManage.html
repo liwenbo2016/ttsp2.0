@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/commit.css"/>
+	<link rel="stylesheet" type="text/css" href="css/ht.css"/>
+	<script src="js/pixel.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+		<h1 class="mui-title">商品管理</h1>
+	</header>
+	
+	<div class="mui-content">
+		
+
+	<!-- 	<table border="0" cellspacing="" cellpadding="" class="mui_shopManage_sheet">
+			<thead>
+				<tr>
+					<th class="mui-col-xs-3 mui-col-sm-3">商品名称</th>
+					<th class="mui-col-xs-3 mui-col-sm-3">上传时间</th>
+					<th class="mui-col-xs-3 mui-col-sm-3">商品价格</th>
+					<th class="mui-col-xs-3 mui-col-sm-3">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+				<tr>
+					<td class="mui-col-xs-3 mui-col-sm-3">女士外套</td>
+					<td class="mui-col-xs-3 mui-col-sm-3">2019/01/07</td>
+					<td class="mui-col-xs-3 mui-col-sm-3">1000</td>
+					<td class="mui-col-xs-3 mui-col-sm-3">					
+						<a class="mui_btnDf" >上架</a>	
+						<a class="mui_btnDf" >下架</a>			
+					</td>
+				</tr>
+				<tr>
+					<td class="mui-col-xs-3 mui-col-sm-3">女士外套</td>
+					<td class="mui-col-xs-3 mui-col-sm-3">2019/01/07</td>
+					<td class="mui-col-xs-3 mui-col-sm-3">1000</td>
+					<td class="mui-col-xs-3 mui-col-sm-3">					
+						<a class="mui_btnDf" >上架</a>	
+						<a class="mui_btnDf" >下架</a>			
+					</td>
+				</tr>
+				<tr>
+					<td class="mui-col-xs-3 mui-col-sm-3">女士外套</td>
+					<td class="mui-col-xs-3 mui-col-sm-3">2019/01/07</td>
+					<td class="mui-col-xs-3 mui-col-sm-3">1000</td>
+					<td class="mui-col-xs-3 mui-col-sm-3">					
+						<a class="mui_btnDf" >上架</a>	
+						<a class="mui_btnDf" >下架</a>			
+					</td>
+				</tr>
+				<tr>
+					<td class="mui-col-xs-3 mui-col-sm-3">女士外套</td>
+					<td class="mui-col-xs-3 mui-col-sm-3">2019/01/07</td>
+					<td class="mui-col-xs-3 mui-col-sm-3">1000</td>
+					<td class="mui-col-xs-3 mui-col-sm-3">					
+						<a class="mui_btnDf" >上架</a>	
+						<a class="mui_btnDf" >下架</a>			
+					</td>
+				</tr>
+			
+			</tbody>
+		
+		
+		</table> -->
+		
+		<ul class="mui-table-view mui_goodsManage_wrap">
+			<li class="mui-table-view-cell mui-media mui_goodsManage_item">
+				<a class="mui_goodsManage_itemContent" href="javascript:;">
+					<img class="mui-media-object mui-pull-left" src="img/brand_goods3.jpg">
+					<div class="mui-media-body">
+						<p class="mui-ellipsis mui_goodsManage_dec">威廉芳婷赤霞珠进口红酒（2瓶装）支</p>
+						<p class="mui_goodsType">
+							<span class="mui_typeItem">红酒</span><span class="mui_typeItem">大瓶</span>
+						</p>
+						<p class="mui_goodsManage_priceRow">
+							<span class="mui_priceDf mui-pull-left">¥988.0</span>
+							<span class="mui-pull-right mui_countsDf">库存：100</span>
+						</p>
+						
+						<span class="mui_goodsStatus">出售中</span>
+					</div>
+				</a>
+				<div class="mui_goodsManage_btnBar mui-row">
+					<a class="mui_btnDf" href="">上架</a>
+					<a class="mui_btnDf" href="" style="color:red;border-color:red;">下架</a>
+					<a class="mui_btnDf" href="">编辑</a>
+					<a class="mui_btnDf" href="" style="color:red;border-color:red;">删除</a>
+			
+				</div>
+			</li>	
+			
+			<li class="mui-table-view-cell mui-media mui_goodsManage_item">
+				<a class="mui_goodsManage_itemContent" href="javascript:;">
+					<img class="mui-media-object mui-pull-left" src="img/brand_goods3.jpg">
+					<div class="mui-media-body">
+						<p class="mui-ellipsis mui_goodsManage_dec">威廉芳婷赤霞珠进口红酒（2瓶装）支</p>
+						<p class="mui_goodsType">
+							<span class="mui_typeItem">红酒</span><span class="mui_typeItem">大瓶</span>
+						</p>
+						<p class="mui_goodsManage_priceRow">
+							<span class="mui_priceDf mui-pull-left">¥988.0</span>
+							<span class="mui-pull-right mui_countsDf">库存：100</span>
+						</p>
+						
+						<span class="mui_goodsStatus">已下架</span>
+					</div>
+				</a>
+				<div class="mui_goodsManage_btnBar mui-row" >
+					<span class="mui_btnDf"  onclick ="areadyPutaway()">上架</span>
+					<span class="mui_btnDf"  style="color:red;border-color:red;" onclick="areadyPutDown()">下架</span>
+					<span class="mui_btnDf" onclick="goodsEdit()">编辑</span>
+					<span class="mui_btnDf"  style="color:red;border-color:red;" onclick="goodsDelete()">删除</span>
+				</div>
+			</li>	
+			
+		</ul>
+	</div>
+	
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		mui.init()
+		
+		function areadyPutaway(){
+			mui.alert('该商品已上架',' ','确定',function(){
+			},'div')
+		}
+		
+		function areadyPutDown(){
+			mui.alert('该商品已下架',' ','确定',function(){
+			},'div')
+		}
+		
+		function goodsEdit(){
+			mui.openWindow({url:'my-seller-add.html' , id:"seller-add"})
+		}
+		
+		function goodsDelete(){
+			mui.confirm('确定删除该商品？', ' ',['取消','确认'],function (e) {
+				e.index
+			},'div')
+		}
+
+
+	</script>
+</body>
+</html>

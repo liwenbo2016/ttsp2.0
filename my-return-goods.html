@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>申请退货</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/mui.min.css" />
+		<link rel="stylesheet" href="css/my-after-sale.css" />
+		<link rel="stylesheet" href="css/mui.picker.css" />
+		<link rel="stylesheet" href="css/mui.poppicker.css" />
+		<script src="js/pixel.js"></script>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left mui-icon-color">
+		    	<span class="mui-ti-samll">申请退货</span>
+		    </a>
+		</header>
+		<div class="mui-content">
+		    <ul class="mui-table-view mui-uls-top">		
+                <li class="mui-table-view-cell">
+                    <img class="mui-media-object mui-pull-left" src="img/0.jpg">
+					<div class="mui-media-body">
+						<p class="mui-titls-font">南极人男士内裤男平角裤纯棉青年透气韩版全棉四角裤头短裤衩潮LM</p>
+						<p class="mui-ties-font">
+							<span>商品类型：经典纯色</span>
+							<span>尺码：XL</span>
+						</p>
+						<p class="mui-titls-font">
+							<span class="mui-pull-left mui-tit-color">￥998.00</span>
+							<span class="mui-pull-right">+ 1</span>
+						</p>
+					</div>
+				<li>			
+            </ul>
+            <ul class="mui-table-view mui-table-view-chevron mui-ul-to">
+				<li class="mui-table-view-cell mui-border-tops">
+					<a id='demo' class="mui-navigate-right">
+						<span class="mui-pull-left mui-left-left">退货原因</span>
+						<span class='mui-pull-right mui-right-right'>请选择</span>
+						<span class="mui-sele"></span>
+					</a>
+				</li>	
+				<li class="mui-table-view-cell mui-border-tops">
+					<a href="#" class="">
+						<span class="mui-pull-left mui-left-left">退货金额：</span>
+						<span class='mui-pull-left mui-tit-color'>￥99.00</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-border-tops">
+					<a href="#" class="">
+						<span class="mui-pull-left mui-left-left">退货说明：</span>
+						<span class='mui-pull-left mui-left-left'>选填</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-border-tops">
+					<a href="#" class="">
+						<span class="mui-pull-left mui-left-left">上传照片照片</span>
+						<div class="mui-img-file">
+							<label>
+								<span class="mui-span-one">+</span>
+								<span class="mui-span-two">点击上传</span>
+								<input type="file" class="mui-input-block" />
+								<img class="mui-img-center"/>
+							</label>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<div id='userResult' class="ui-alert"></div>
+			<button type="reset" class="mui-btn mui-btn-red mui-btn-block mui-btn-butt">提交</button>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/mui.picker.min.js"></script>
+		<script src="js/mui.poppicker.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui('.mui-img-file').each(function () {
+				var img = this.querySelector('.mui-img-center');
+				this.querySelector('input[type=file]').onchange = function (e) {
+					var obj = e.target.files[0];
+					if (!obj){return}
+					var fr = new FileReader();
+					console.log(obj);
+					fr.onload = function () {
+						img.src = this.result;
+					}
+					fr.readAsDataURL(obj);
+				}
+			});
+			
+			var picker = new mui.PopPicker();
+			picker.setData([
+				{value:'1',text:'7天无理由退换'},
+				{value:'2',text:'运费'},
+			]);
+			document.getElementById('demo').addEventListener('tap', function (e) {
+				picker.show(function (selectItems) {
+					e.target.querySelector('.mui-right-right').style.cssText = 'display: none';
+					e.target.querySelector('.mui-sele').innerText = selectItems[0].text;
+				    console.log(selectItems[0].text);//智子
+				    console.log(selectItems[0].value);//zz
+				});
+			});
+		</script>
+	</body>
+
+</html>

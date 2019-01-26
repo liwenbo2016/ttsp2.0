@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>消息中心</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/mui.min.css"/>
+		<link rel="stylesheet" href="css/commit.css"/>
+		<link rel="stylesheet" href="css/my-orderDetails.css"/>
+		<link rel="stylesheet" href="css/my-message.css" />
+		<script src="js/pixel.js"></script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left mui-icon-color"></a>
+		    <h1 class="mui-title">消息中心</h1>
+		</header>
+		<div class="mui-content">
+		    <div id="sliderSegmentedControl" class="mui-segmented-control">
+		    	<a href="#item1mobile" class="mui-control-item mui-active">系统消息</a>
+		    	<a href="#item2mobile" class="mui-control-item">订单消息</a>
+		    	<a href="#item3mobile" class="mui-control-item">资产消息 </a>
+		    	<a href="#item4mobile" class="mui-control-item">活动消息 </a>
+		    </div>
+		    <div class="mui-content-padded">
+                <div id="item1mobile" class="mui-control-content mui-active">
+                	<ul class="mui-table-view">
+                		<li class="mui-table-view-cell">
+                            <a href="home-message-detail.html">
+								<img class="mui-pull-left mui-img-samll" src="img/ico_voice.png">
+								<span class="mui-info-mess mui-info-color mui-pull-left">2019年1月15日 商城开启公测</span>
+								<span class="mui-info-mess mui-mess-color  mui-pull-right">2019-01-15</span>
+							</a>
+						<li>
+                    </ul>
+                </div>
+                
+                <div id="item2mobile" class="mui-control-content">
+                	<ul class="mui-table-view">
+                		<li class="mui-table-view-cell">
+                            <a href="shoppingCart-edit-order.html">
+								<img class="mui-pull-left mui-img-samll" src="img/ico_voice.png">
+								<span class="mui-info-mess mui-info-color mui-pull-left">有新订单等待处理</span>
+								<span class="mui-info-mess mui-mess-color  mui-pull-right">2019-01-15</span>
+							</a>
+						<li>		
+                    </ul>
+                </div>
+               
+                
+                <div id="item3mobile" class="mui-control-content">
+                	<ul class="mui-table-view">
+                		<li class="mui-table-view-cell mui-li-tops">
+                            <a href="my-balance.html">
+								<img class="mui-pull-left mui-img-samll" src="img/ico_voice.png">
+								<span class="mui-info-mess mui-info-color mui-pull-left">你的余额于2019年1月2日完成交易  </span>
+								<span class="mui-info-mess mui-mess-color  mui-pull-right">2019-01-15</span>
+							</a> 
+						<li>		
+                    </ul>
+                </div>
+                
+                <div id="item4mobile" class="mui-control-content">
+                	<ul class="mui-table-view">
+                		<li class="mui-table-view-cell mui-li-tops">
+                            <a href="#">
+								<img class="mui-pull-left mui-img-samll" src="img/ico_voice.png">
+								<span class="mui-info-mess mui-info-color mui-pull-left">商城开启公测 </span>
+								<span class="mui-info-mess mui-mess-color  mui-pull-right">2019-01-15</span>
+							</a>
+						<li>		
+                    </ul>
+                </div>
+            </div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,170 @@
+/*公共样式*/
+html body{font-size:16px;}
+*{margin:0;padding:0;}
+ul li{list-style:none;}
+a{text-decoration:none;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,p,blockquote,th,td,figure{margin:0;padding:0;}
+body{"Helvetica Neue",Helvetica,STheiti,"Microsoft Yahei","冬青黑体简体中文 w3",宋体,Arial,Tahoma,sans-serif,serif;word-wrap:break-word;background: #F0F0F0;}
+.clearfix:after {visibility: hidden;display: block;font-size: 0;content: " ";clear: both;height: 0;}
+
+/*主体样式*/
+.content{
+	width:78%;
+	margin:0 auto;
+	background-color:#f5f5f5;
+	/*border:1px solid red;*/
+	box-shadow:0rem 1.125rem 3rem 0rem rgba(0, 0, 0, 0.16);
+}
+.nav-bar{
+	background:#174ecf;
+}
+.nav-bar .left{
+	color:#fff;
+	font-size:1rem;
+	line-height:2.25rem;
+	margin:1.25rem;
+}
+.nav-bar .right{
+	float:right;
+	margin:0.625rem 1.25rem;
+}
+.main{
+	width:100%;
+	height:45.625rem;
+    padding:1.875rem 2.1rem;
+	/*border:1px solid red;*/
+}
+.main-left{
+	float:left;
+	width:57%;
+	/*width:850px;*/
+	/*height:730px;*/
+	/*border:1px solid red;*/
+}
+.main-left-top{
+	height:6.875rem;
+	/*border:1px solid red;*/
+}
+.main-left-top .info{
+	float:left;
+	width:48.5%;
+	/*height:110px;*/
+	background:#fff;
+	margin:0px 5px 0px 0px 
+}
+.main-left-top .mess{
+	float:right;
+	margin:0px 0px 0px 5px 
+	/*margin-left:1.25rem;*/
+}
+.main-left-top .name{
+	float:left;
+}
+.main-left-top .img{
+	width:8.4375rem;
+}
+.main-left-top .img img{
+	height:3.9375rem;
+    /*margin:1.4375rem 2.875rem;*/
+}
+.main-left-top .name p{
+	color:#999;
+	margin-top:1.75rem;
+}
+.main-left-top .info .sex{
+	width:6.25rem;
+}
+.main-left-bottom{
+	height:37.5rem;
+    margin-top:1.25rem;
+	background:#fff;
+	position:relative;
+}
+.main-left-bottom .in-header{
+	border-bottom:1px solid #ebebeb;
+}
+.main-left-bottom .in-header span{
+	line-height:4.0625rem;
+}
+.main-left-bottom .in-header .info-left{
+	color:#333;
+	font-size:1.125rem;
+    margin-left:1.25rem;
+	font-weight:bold;
+}
+.main-left-bottom .in-header .info-right{
+	float:right;
+	color:#999;
+	font-size:1.125rem;
+    margin-right:1.25rem;
+}
+.main-left-bottom .in-centent{
+	height:33.4375rem;
+	overflow:hidden;
+}
+.main-left-bottom .in-centent div{
+	border-bottom: 1px dashed #fff;
+}
+.main-left-bottom .in-centent div p{
+	color:#333;
+	font-size:1rem;
+    line-height:1.3125rem;
+    margin:0.875rem 1.375rem;
+}
+.main-left-bottom .in-centent div .title{
+	text-indent:0.3125rem;
+    font-weight:bold;
+    border-left:0.1875rem solid #414dfc;
+}
+.main-left-bottom .in-centent div .distance{
+	width:55%;
+	margin-left:6.25rem;
+}
+.main-right{
+	float:left;
+	/*width:550px;*/
+	width:37%;
+	/*height:730px;*/
+	margin-left:1.25rem;
+	/*border:1px solid red;*/
+}
+.main-right .box{
+	height:22.125rem;
+	background:#fff;
+}
+.main-right-bottom{
+	margin-top:1.375rem;
+}
+.main-right .in-nav{
+	color: #333;
+	font-size:1.125rem;
+	line-height:4.0625rem;
+	text-indent:1.25rem;
+	font-weight:bold;
+	border-bottom:0.0625rem solid #ebebeb;
+}
+.main-right .in-footer{
+	height:18.4375rem;
+	overflow:hidden;
+}
+.main-right .in-footer div {
+	height:18.4375rem;
+	/*width:545px;*/
+}
+.main-right .in-footer div p{
+	margin:1.25rem 1.25rem;
+    font-size:1rem;
+    color:#333;
+    line-height:1.5rem;
+}
+.main-right .in-footer .inner{
+	margin-left:1.25rem;
+	text-indent:0.3125rem;
+	font-size:1rem;
+	line-height:1.3125rem;
+	font-weight:bold;
+	border-left:0.1875rem solid #fc9f41;
+}
+.main-right .in-footer .inners{
+	border-left:0.1875rem solid #36e832;
+}

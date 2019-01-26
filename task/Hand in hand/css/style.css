@@ -1,0 +1,487 @@
+/*头部导航栏公共样式*/
+body,html,p,span,i,a,ul li , ol li {font-family:"微软雅黑";}
+.mui-bar-change{
+	background:url(../img/banner.png)no-repeat;
+	background-size:100% 100%;
+}
+.mui-bar-change a , .mui-bar-change h1{
+	color:#fff;
+}
+.mui-bar-right , .mui-bar-left{
+	font-size:1.0625rem;
+	line-height:2.75rem;
+}
+.mui-content-bg{
+	background:#fff;
+}
+.mui-scrollbar {
+    display: none !important;
+}
+
+
+/*案件采集与警情采集样式*/
+.mui-input-set{
+	height:4.0625rem;
+	padding-top:0.9375rem;
+	background:#fff;
+	border-bottom:0.0625rem solid #dcdcdc;
+}
+.mui-input-set label{
+	color:#666;
+}
+.mui-input-set input{
+	color:#ccc;
+}
+.mui-bott{
+	color:#bababe;
+	margin:0.3125rem;
+}
+.mui-btn-bto{
+	color:#fff;
+	width:90%;
+	display:block;
+	text-align:center;
+	font-size:1rem;
+	font-weight:bold;
+	line-height:2.65625rem;
+	border-radius: 0.25rem;
+	letter-spacing:0.0625rem;
+	margin:1.5625rem auto;
+	background-color:#12b8f6;
+}
+
+/*我的页面样式*/
+.mui-bar-back{
+	height:8.125rem;
+}
+.mui-bar-info{
+	width:100%;
+	margin-top:2.5rem;
+}
+.mui-bar-img{
+	float:left;
+	width:20%;
+	height:3.75rem;
+	margin-top:0.9375rem;
+}
+.mui-bar-img img{
+	height:3.75rem;
+	border-radius:50%;
+}
+.mui-bar-mes{
+	float:left;
+	width:50%;
+	height:3.75rem;
+	margin-top:0.9375rem;
+}
+.mui-bar-mes h5{
+	font-size:1rem;
+}
+.mui-bar-mes h5,p{
+	color:#fff;
+	line-height:1.4375rem;
+}
+.mui-bar-link{
+	float:right;
+	width:30%;
+	height:3.75rem;
+	margin-top:0.6875rem;
+}
+.mui-line{
+	color:#fff;
+	line-height:2.5rem;
+}
+.mui-margin-top{
+	background-color:#fff;
+	margin-top:5.3125rem;
+}
+.mui-info-list{
+	width:100%;
+	height:4.0625rem;
+	border-bottom:1px solid #dcdcdc;
+}
+.mui-info-list span{
+	float:left;
+	line-height:4.0625rem;
+	display:inline-block;
+}
+.mui-info-list .one{
+	width:20%;
+	color:#666;
+	padding-left:1.25rem;
+}
+.mui-info-list .two{
+	width:80%;
+	color:#333;
+	padding-left:0.3125rem;
+}
+
+/*查询结果页面样式*/
+.mui-link-info{
+	width:100%;
+	height:12.5rem;
+	background-color:#fff;
+}
+.mui-info-top{
+	position:relative;
+	overflow:hidden;
+}
+.mui-info-bgt{
+	float:left;
+	width:3.75rem;
+	height:3.75rem;
+}
+.mui-info-bgt img{
+	height:3.125rem;
+    margin:0.3125rem 0.9375rem;
+	border-radius:50%;
+	border:0.025rem solid #ccc;
+}
+.mui-info-meg{
+	float:left;
+	height:3.75rem;
+	margin-left:0.9375rem;
+}
+.mui-info-top span{
+	line-height:3.75rem;
+}
+.mui-info-top .boy{
+	color:#666;
+}
+.mui-info-top .boy span{
+	color:#333;
+}
+.mui-info-top .day{
+	position:absolute;
+	right:0.625rem;
+	top:0;
+	color:#999;
+	margin-right:1.25rem;
+}
+.mui-link-info p{
+	width:100%;
+	margin:0;
+	color:#666;
+	font-size:1.0625rem;
+	line-height:2.1875rem;
+	text-indent:1.25rem;
+}
+.mui-link-info p i{
+	color:#333;
+	font-style:normal;
+}
+.mui-link-info .blue{
+	color:#0e41e9;
+	font-weight:bold;
+}
+.mui-link-margin-top{
+	margin-top:0.625rem;
+}
+
+/*登录页面样式*/
+.mui-img-post{
+	position:relative;
+	width:33.33%;
+	height:3.75rem;
+	margin:6.25rem auto;
+}
+.mui-img-post img{
+	height:5.625rem;
+    margin:auto;  
+    position:absolute;  
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;  
+}
+.mui-input-indent{
+	width:90%;
+	margin:3% auto
+}
+.mui-input-indent input{
+    color:#333;
+}
+.mui-btn-reset{
+	width:100%;
+	color:#fff;
+	margin:0 auto;
+	font-size:1.125rem;
+	border-radius:1.875rem;
+	background-color:#2d8cf7;
+}
+.mui-input-indent a{
+	color:#666;
+	font-size:0.875rem;
+}
+.mui-input-indent .left{
+	float:left;
+	width:55%;
+}
+.mui-input-indent .right{
+	float:right;
+	width:45%;
+}
+.mui-input-indent .right span{
+	float:right;
+}
+.mui-input-enter{
+	border:0;
+}
+.mui-input-enter a{
+	color:#fff;
+	font-size:1.0625rem;
+	letter-spacing: 0.0625rem;
+	
+}
+/*案情上传与警情上传页面样式*/
+.mui-input-set{
+	width:100%;
+	height:4.0625rem;
+	padding-top:0.9375rem;
+	background-color:#fff;
+	border-bottom:0.0625rem solid #dcdcdc;
+}
+.mui-shang-file{
+	width:100%;
+	height:9.375rem;
+	background:#fff;
+}
+.mui-shang-file a{
+	color:#ccc;
+	width:3.125rem;
+	height:3.125rem;
+	line-height:3.125rem;
+	text-align:center;
+	font-weight:bold;
+	margin:1.25rem;
+	display: inline-block;
+	border:0.0625rem dashed #ccc;
+}
+.mui-icon-active{
+	display:none;
+}
+
+/*管辖单位页面样式*/
+.mui-search-indent{
+	border-radius:0.25rem;
+	margin:0.375rem 0.625rem;
+}
+.mui-input-outset{
+	position:relative;
+	border-bottom: 0.0625rem solid #dcdcdc;
+}
+.mui-input-width input[type=checkbox]:checked:before {
+    content: '\e442';
+}
+.mui-input-width input[type=checkbox]:checked:before {
+    color: #007aff;
+}
+.mui-input-width input[type=checkbox]:before {
+    content: '\e411';
+}
+.mui-input-width input[type=checkbox]:before{
+    font-family: Muiicons;
+    font-size: 1.75rem;
+    font-weight: 400;
+    margin-top:-0.3125rem;
+    display: inline-block;
+    text-decoration: none;
+    color: #aaa;
+    border-radius: 0;
+    background: 0 0;
+    -webkit-font-smoothing: antialiased;
+}
+.mui-input-width input[type=checkbox]{
+    position: absolute; 
+    padding:0rem 1.25rem;
+    width: 1.75rem; 
+    height: 1.625rem; 
+    border: 0;
+    outline: 0!important;
+    background-color: transparent;
+    -webkit-appearance: none;
+}
+.mui-span-width{
+	color:#333;
+	margin:1.25rem 0rem 1.25rem 3.75rem;
+}
+
+/*个人中心页面样式*/
+.mui-mess-link{
+	height:4.0625rem;
+	position:relative;
+	background-color:#fff;
+	border-bottom:0.0625rem solid #dcdcdc;
+}
+.mui-mess-link span{
+	float:left;
+	color:#333;
+	padding-left:1.25rem;
+	line-height:4.0625rem;
+	display:inline-block;
+}
+.mui-mess-link div{
+	position:absolute;
+	right:2.5rem;
+}
+.mui-mess-link div img{
+	height:3.125rem;
+	border-radius:50%;
+	margin-top:0.40625rem;
+	border:0.0625rem solid #dcdcdc;
+}
+.mui-mess-link a{
+	color:#ccc;
+	position:absolute;
+	right:0.3125rem;
+	line-height:4.0625rem;
+	margin-right:0.3125rem;
+}
+.mui-mess-link p{
+	color:#999;
+	font-size:1rem;
+	text-align: right;
+	line-height:4.0625;
+	padding-right:1.25rem;
+}
+.mui-mess-link:hover{
+	background-color:#dcdcdc;
+}
+
+/*设置页面样式*/
+.mui-info-lists{
+	display:block;
+	overflow:hidden;
+	background-color:#fff;
+	border-bottom:0.0625rem solid #dcdcdc;
+}
+.mui-info-lists-left{
+	float:left;
+	color:#333;
+    padding:0rem 1.25rem;
+    line-height:4.0625rem;
+}
+.mui-info-lists-right{
+	float:right;
+	color:#999;
+	text-align:right;
+	line-height:4.0625rem;
+}
+.mui-info-lists-right-meas{
+	margin-right:0.625rem;
+}
+.mui-butn{
+	margin:1.1875rem 0.3125rem 0rem 0rem; 
+}
+.mui-info-logo{
+	width:90%;
+	color:#fff;
+	display:block;
+	line-height:2.8125rem;
+	margin:8% auto;
+	text-align:center;
+	background-color:#12b8f6;
+	border-radius:0.25rem;
+}
+.mui-info-logo a{
+	color:#fff;
+	letter-spacing:0.0625rem;
+}
+
+/*软件更新弹窗样式*/
+.mui-popover-position{
+	position:fixed;
+    left:50%;
+    top:70%;
+}
+.mui-popover .mui-popover-arrow:after {
+	width:0rem;
+}
+.mui-pop-info span{
+	color:#333;
+	display: block;
+	padding:0.9375rem;
+	text-align:center;
+	border-bottom:0.0625rem solid #d9d9d9;
+}
+.mui-pop-info .mess{
+	color:#666;
+	padding:2.8125rem;
+	letter-spacing:0.0625rem;
+	text-align:center;
+}
+.mui-pop-info p {
+	margin-top:0.3125rem;
+}
+.mui-pop-info p a{
+	width:50%;
+	border:0;
+	padding:1.25rem;
+	font-size:1.125rem;
+	text-align:center;
+	display: inline-block;
+}
+.mui-btn-left{
+	float:left;
+	color:#333;
+	background-color:#f2f4f8;
+	border-radius:0 0 0 0.4375rem;
+}
+.mui-btn-right{
+	float:left;
+	color:#fff;
+	background-color:#ff4c2e;
+	border-radius:0 0 0.4375rem 0;
+}
+
+/*退出登录弹窗样式*/
+.mui-pop-mes{
+	border-radius:0;
+	background-color:#f2f4f8;
+}
+.mui-pop-mes .info{
+	color:#999;
+	text-align:center;
+	font-size:1.125rem;
+	line-height:8.125rem;
+}
+.mui-pop-mes a{
+	width:100%;
+	display:block;
+	text-align:center;
+	font-size:1.25rem;
+	line-height:3.75rem;
+	margin-top:0.625rem;
+	background-color:#fff;
+	letter-spacing:0.0625rem;
+}
+.mui-btn-se{
+	color:#f74c32;
+}
+.mui-btn-lo{
+	color:#333;
+}
+
+
+/*手机号码修改和密码修改及邮箱修改等页面样式*/
+.mui-input-sets{
+	height:4.0625rem;
+	padding-top:0.9375rem;
+	background-color:#fff;
+}
+.mui-bg-color{
+	background-color:#fff;
+}
+.mui-top-info{
+	margin:0;
+	color:#999;
+	padding:0.625rem 1.25rem;
+	background-color:#f2f4f8;
+}
+.mui-input-bord{
+	padding:0rem 0rem 0.625rem 0rem;
+	border-bottom:0.0625rem solid #ccc;
+}
+.mui-input-sets input{
+	border:0;
+}

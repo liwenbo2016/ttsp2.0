@@ -1,0 +1,177 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/commit.css"/>
+	<link rel="stylesheet" type="text/css" href="css/ht.css"/>
+	<script src="js/pixel.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left">
+		</a>
+		<h1 class="mui-title">申请代理</h1>
+	</header>
+	<div class="mui-content">
+		<ul class="mui-table-view mui_agencyApplication_contain">
+			<li class="mui-table-view-cell mui_agencyApplication_city" id="aa">
+				<a class="mui-push-right " id="openSheet" href="#sheet">
+					请选择代理城市
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				代理费用
+				<span class="mui-pull-right mui_priceColor ">¥0.00</span>
+			</li>
+		</ul>
+		
+		<div class="mui_agencyApplication_submitRow">
+			<!-- 在没选代理城市之前 btn 不可用 -->
+			<button type="button" class="mui-btn mui-btn-blue mui-btn-block" onclick="turn_nextPage()">提交</button>
+		</div>
+		
+		
+	
+		
+	</div>
+		<div id="sheet" class="mui-popover mui-popover-bottom mui-popover-action mui_agencyApplication_citysheet">
+	
+			<p class="mui_sheetLabel">配送至</p>
+			<div class="mui_cityArea">
+				<!-- 请选择 省-市-区
+				 mui_itemDf_now 为请选择样式 -->
+				<span class="mui_itemDf  mui_itemDf_now">请选择</span>
+				<span class="mui_itemDf hideDf ">请选择</span>
+				<span class="mui_itemDf hideDf">请选择</span>
+			</div>
+			<!-- 可选择菜单 -->
+			<ul class="mui-table-view mui_sheetList">
+				
+			</ul>
+	</div>
+	
+		
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/cityJson.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		mui.init()
+		function turn_nextPage(){
+			mui.openWindow({url:"my-agent-checkoutCounter.html",id:"my-agent-checkoutCounter"})
+		}
+		mui.ready(function () {
+			// 地址选择部分
+			var addressInput = mui('.mui_cityArea .mui_itemDf')
+			var cityframe = mui('.mui_sheetList')[0]
+		
+			// 打开选择地址frame
+			document.getElementById('openSheet').addEventListener('tap' ,function(){
+					showProvince(province)
+			})
+			// 展示地址
+			function addressShow(address,level){
+				mui.each(address,function(){
+					var addressName = this.name
+					var node=document.createElement("li");
+					var textnode=document.createTextNode(addressName);
+					node.setAttribute('data-id',this.id)
+					node.setAttribute('data-level',level)
+					node.setAttribute('data-name',addressName)
+					node.appendChild(textnode);
+					cityframe.appendChild(node);
+				})
+			}
+			
+			// showProvince
+			function showProvince(item){
+				addressShow(item,0)
+			}
+			// showCity
+			function showCity(item){
+				cityList = item.city
+				addressShow(cityList,1)
+			}
+			// showArea
+			function showArea(item){
+				addressShow(item,2)
+			}
+			// 监听选项click事件
+			mui('.mui_sheetList').on('click', 'li',function(){
+				cityLevel = this.getAttribute('data-level')
+				cityId = this.getAttribute('data-id')
+				cityName =this.getAttribute('data-name')
+				if(cityLevel==0){
+					addressInput[0].innerHTML  = cityName
+					addressInput[0].setAttribute('class','mui_itemDf')
+					addressInput[1].setAttribute('class','mui_itemDf mui_itemDf_now')
+					
+					deleteItem()
+					checkoutCityId(province ,cityId)
+				}
+				else if(cityLevel==1){
+					addressInput[1].innerHTML  = cityName
+					addressInput[1].setAttribute('class','mui_itemDf')
+					addressInput[2].setAttribute('class','mui_itemDf mui_itemDf_now')
+					deleteItem()
+					checkoutCityPid(area ,cityId)
+				}
+				else if(cityLevel==2){
+					addressInput[2].innerHTML  = cityName
+					if(cityName){
+						deleteItem()
+						closedAddressFrame()
+						addressInit()
+					}
+				}
+		
+			})
+			// 查询city
+			function checkoutCityId(objList , id){
+				mui.each(objList,function(){
+					if(this.id == id){
+						showCity(this)		
+					}
+				})
+			}
+			// 查询区、县
+			function checkoutCityPid(objList , id){
+				var AreaArry = []
+				mui.each(objList,function(){
+					if(this.pid == id){
+						AreaArry.push(this)			
+						showArea(AreaArry)
+					}
+				})
+			}
+			//delete
+			function deleteItem(){
+				var address_frame =  document.getElementsByClassName('mui_sheetList')
+				var address_List = address_frame[0].children
+				var alist_length = address_List.length
+				for(var i = 0 ;  i < alist_length ;i++){
+					address_List[0].parentNode.removeChild(address_List[0])
+					alist_length--
+					i--
+				}
+				
+			}
+			// 关闭
+			function closedAddressFrame(){
+				var AddressLayer = mui('.mui-backdrop')[0]
+				mui.trigger(AddressLayer ,"tap")
+				mui('#openSheet')[0].innerHTML = addressInput[0].innerHTML + " - " + addressInput[1].innerHTML + " - " + addressInput[2].innerHTML
+			}
+			// init
+			function addressInit(){
+				addressInput[0].setAttribute('class','mui_itemDf mui_itemDf_now ')
+				addressInput[1].setAttribute('class','mui_itemDf  hideDf ')
+				addressInput[2].setAttribute('class','mui_itemDf  hideDf ')
+			}
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/setting.css"/>
+		<link rel="stylesheet" type="text/css" href="css/commit.css"/>
+		<script src="js/pixel.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-icon-arrowleft mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title mui-align-left">修改支付密码</h1>
+		</header>
+		<div class="mui-content">
+		    <form class="mui-input-group">
+		        <div class="mui-input-row">
+		            <label>原支付密码</label>
+		            <input type="password" id="oldpwd" name="oldpwd" class="mui-input-clear" placeholder="请输入原支付密码">
+		        </div>
+		        <div class="mui-input-row">
+		            <label>新支付密码</label>
+		            <input type="password" id="newpwd" name="newpwd" class="mui-input-clear" placeholder="请输入新支付密码">
+		        </div>
+		        <div class="mui-input-row">
+		            <label>确认支付密码</label>
+		            <input type="password" id="validatepwd" name="validatepwd" class="mui-input-clear" placeholder="请再次输入新支付密码">
+		        </div>
+		        
+		    </form>
+		    <div class="mui-input-row">
+		        <label></label>
+		        <a href="my-setting-acc-forgetpwd.html" class="mui-forget">忘记密码？</a>
+		    </div>
+		    <div class="mui-center-box">
+		    	<button type="button" id="btn" class="mui-btn mui-btn-yellow">确认修改</button>
+		    </div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			document.getElementById('newpwd').addEventListener('blur', function () {
+				var newPassword = getInputValue('newpwd');
+				var validatePassword = getInputValue('validatepwd');
+				if (!newPassword) {
+					mui.toast('请输入新支付密码');
+					return;
+				}
+				if (!validatePassword) {
+					return;
+				}
+				if (newPassword !== validatePassword) {
+					mui.toast('两次输入的密码不一致');
+				}
+			});
+			document.getElementById('validatepwd').addEventListener('blur', function () {
+				var newPassword = getInputValue('newpwd');
+				var validatePassword = getInputValue('validatepwd');
+				if (!newPassword) {
+					mui.toast('请输入新支付密码');
+					return;
+				}
+				if (!validatePassword) {
+					mui.toast('请确认支付密码');
+					return;
+				}
+				if (newPassword !== validatePassword) {
+					mui.toast('两次输入的密码不一致');
+				}
+			});
+			
+			document.getElementById('btn').addEventListener('click', function () {
+				if (!getInputValue('oldpwd')) {
+					mui.toast('请输入原支付密码');
+					return;
+				}
+				
+				if (!getInputValue('newpwd')) {
+					mui.toast('请输入新支付密码');
+					return;
+				}
+				if (!getInputValue('validatepwd')) {
+					mui.toast('请确认新支付密码');
+					return;
+				}
+			});
+			
+			var getInputValue = function (id) {
+				return document.getElementById(id).value;
+			};
+//			var checkPassword = function () {
+//				
+//			}
+		</script>
+	</body>
+
+</html>

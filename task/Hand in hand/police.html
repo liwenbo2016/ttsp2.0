@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>警情采集</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/style.css" />
+	    <link rel="stylesheet" href="css/laydate.css" />
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav mui-bar-change">
+		    <h1 class="mui-title">警情采集</h1>
+		</header>
+		<div class="mui-content">
+            <div class="mui-input-set">
+				<div class="mui-input-row">
+				    <label>警情编号</label>
+			        <input type="text" class="mui-input-clear" placeholder="输入警情编号">
+				</div>
+			</div>
+			<div class="mui-input-set">
+				<div class="mui-input-row">
+				    <label>报警时间</label>
+			        <input type="text" id='pickDateBtn' class="mui-input-clear" placeholder="开始时间 - 结束时间">
+				</div>
+			</div>
+			<div class="mui-input-set">
+				<div class="mui-input-row">
+				    <label>报警人</label>
+			        <input type="text" class="mui-input-clear" placeholder="输入报警人姓名">
+				</div>
+			</div>
+			<a id="deom">
+				<div class="mui-input-set" style="border:0;">
+					<div class="mui-input-row">
+					    <label>管辖单位</label>
+				        <span class="mui-icon mui-icon-arrowright mui-pull-right mui-bott"></span>
+					</div>
+				</div>
+			</a>
+			<a class="mui-btn-bto" id="layouts">查询</a>
+		</div>
+		<script src="js/laydate.js"></script>
+		<script>
+			lay('#version').html('-v'+ laydate.v);
+			    laydate.render({
+			      elem: '#pickDateBtn'
+			      ,range: true
+			    });
+		</script>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			document.getElementById('layouts').addEventListener('tap', function() {
+				mui.openWindow({
+					url: 'police-query-result.html', 
+					id: 'police-query-result.html',
+					show: {
+			            aniShow: 'pop-in',
+			            duration: 250
+			        }
+			    })			
+		    });	
+		    document.getElementById('deom').addEventListener('tap', function() {
+				mui.openWindow({
+					url: 'police-administer.html', 
+					id: 'police-administer.html',
+			    })			
+		    });	
+		</script>
+	</body>
+
+</html>
